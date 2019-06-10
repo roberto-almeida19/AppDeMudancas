@@ -12,7 +12,7 @@ public class DaoEnderecoMudanca implements IDaoEnderecoMudanca {
 	@Override
 	public void criarEnderecoMudanca(EnderecoMudanca enderecoMudanca) throws SQLException {
 
-		Connection con = new ConnectionManager().getConnection();
+		Connection con = ConnectionManager.getInstance().getConnection();
 		
 		String query = "INSERT INTO endereco_mudanca("
 				+ "nome,bairro,numero,cidade,uf,complemento) "

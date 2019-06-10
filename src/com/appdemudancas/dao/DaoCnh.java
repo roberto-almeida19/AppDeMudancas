@@ -17,7 +17,7 @@ public class DaoCnh implements IDaoCnh {
 	@Override
 	public void criarCnh(Cnh cnh) throws SQLException, IOException {
 
-		Connection con = new ConnectionManager().getConnection();
+		Connection con = ConnectionManager.getInstance().getConnection();
 
 		String query = "INSERT INTO cnh(" 
 				+ "numero_cnh,foto_cnh) " 
@@ -36,7 +36,7 @@ public class DaoCnh implements IDaoCnh {
 	@Override
 	public Cnh buscarCnh(Cnh cnh) throws SQLException, IOException {
 		
-		Connection con = new ConnectionManager().getConnection();
+		Connection con = ConnectionManager.getInstance().getConnection();
 		
 		Cnh auxCnh = new Cnh();
 		
@@ -61,7 +61,7 @@ public class DaoCnh implements IDaoCnh {
 
 	@Override
 	public void alterarCnh(Cnh cnh) throws SQLException, IOException {
-		Connection con = new ConnectionManager().getConnection();
+		Connection con = ConnectionManager.getInstance().getConnection();
 		
 		String query = "UPDATE cnh SET numero_cnh = ?, foto_cnh = ? WHERE numero_cnh = ?;";
 		
@@ -77,7 +77,7 @@ public class DaoCnh implements IDaoCnh {
 
 	@Override
 	public void removeCnh(Cnh cnh) throws SQLException {
-		Connection con = new ConnectionManager().getConnection();
+		Connection con = ConnectionManager.getInstance().getConnection();
 		String query = "DELETE FROM cnh WHERE numero_cnh = ?;";
 		PreparedStatement pstm = con.prepareStatement(query);
 		pstm.setString(1, cnh.getNumero());

@@ -15,7 +15,7 @@ public class DaoCliente implements IDaoCliente {
 	@Override
 	public void criarCliente(Cliente cliente) throws SQLException {
 
-		Connection con = new ConnectionManager().getConnection();
+		Connection con = ConnectionManager.getInstance().getConnection();
 
 		String query = "INSERT INTO cliente("
 				+ "cpf,nome,telefone,data_nascimento,email,"
@@ -33,7 +33,7 @@ public class DaoCliente implements IDaoCliente {
 		pstm.setString(6, cliente.getSenha());
 		pstm.setDate(7, new java.sql.Date(
 				cliente.getData_cadastro().getTime()));
-		pstm.setInt(8, cliente.getEndereco_cliente().getCodigo());
+		pstm.setInt(8, cliente.getEndereco().getCodigo());
 
 		pstm.executeUpdate();
 
@@ -77,10 +77,10 @@ public class DaoCliente implements IDaoCliente {
 					new java.util.Date(
 							resultado.getDate("data_cadastro").getTime()));
 			
-			auxCliente.getEndereco_cliente().setCodigo(
+			auxCliente.getEndereco().setCodigo(
 					resultado.getInt("endereco_clienteCodigo_endereco"));
-			
-			auxMudanca.setCliente_cpf(auxCliente.getCpf());
+			//TODO Refazer o model
+			auxMudanca.setCliente(auxCliente);
 			
 			auxCliente.setMudanca(new DaoMudanca().buscarMudanca(auxMudanca));
 			
@@ -92,7 +92,7 @@ public class DaoCliente implements IDaoCliente {
 	}
 
 	private ResultSet gerarResultSet(Cliente cliente) throws SQLException {
-		Connection con = new ConnectionManager().getConnection();
+		Connection con = ConnectionManager.getInstance().getConnection();
 
 		String query = "SELECT * FROM cliente WHERE " 
 				+ "cliente.cpf=? OR " 
@@ -112,7 +112,7 @@ public class DaoCliente implements IDaoCliente {
 		pstm.setString(5, cliente.getEmail());
 		pstm.setDate(6, 
 				new java.sql.Date(cliente.getData_cadastro().getTime()));
-		pstm.setInt(7, cliente.getEndereco_cliente().getCodigo());
+		pstm.setInt(7, cliente.getEndereco().getCodigo());
 
 		
 		ResultSet resultado = pstm.executeQuery();
@@ -123,7 +123,7 @@ public class DaoCliente implements IDaoCliente {
 
 	@Override
 	public void alterarCliente(Cliente cliente) throws SQLException {
-		Connection con = new ConnectionManager().getConnection();
+		Connection con = ConnectionManager.getInstance().getConnection();
 		
 		String query = "UPDATE Cliente SET cpf = ?, nome = ?, telefone = ?, data_nascimento = ?, email = ?, data_cadastro = ?"
 						+ "WHERE cpf = ?;";
@@ -139,7 +139,7 @@ public class DaoCliente implements IDaoCliente {
 
 	@Override
 	public void removeCliente(Cliente cliente) throws SQLException {
-		Connection con = new ConnectionManager().getConnection();
+		Connection con = ConnectionManager.getInstance().getConnection();
 		
 		String query = "DELETE FROM tabela WERE cpf = ?;";
 		PreparedStatement pstm = con.prepareStatement(query);

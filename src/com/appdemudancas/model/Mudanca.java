@@ -6,6 +6,7 @@ import java.util.List;
 public class Mudanca {
 	
 	private int codigo;
+	private Cliente cliente;
 	private String status;
 	private Date data_criacao;
 	private Date data_mudanca;
@@ -56,8 +57,17 @@ public class Mudanca {
 	public void setItens(List<ItemMudanca> itens) {
 		this.itens = itens;
 	}
-	
-	
-		
-
+	private Motorista motorista;
+	public Cliente getCliente() {
+		return cliente;
+	}
+	public void setCliente(Cliente cliente) {
+		this.cliente = cliente;
+	}
+	public Motorista getMotorista() {
+		return motorista;
+	}
+	public void setMotorista(Motorista motorista) {
+		this.motorista = motorista;
+	}
 }

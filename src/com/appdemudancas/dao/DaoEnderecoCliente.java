@@ -5,14 +5,14 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import com.appdemudancas.model.EnderecoCliente;
+import com.appdemudancas.model.Endereco;
 
-public class DaoEndereco implements IDaoEndereco {
+public class DaoEnderecoCliente implements IDaoEndereco {
 
 	@Override
-	public void criarEnderecoCliente(EnderecoCliente enderecoCliente) throws SQLException {
+	public void criarEndereco(Endereco enderecoCliente) throws SQLException {
 		
-		Connection con = new ConnectionManager().getConnection();
+		Connection con = ConnectionManager.getInstance().getConnection();
 		
 		String query = "INSERT INTO endereco_cliente("
 				+ "nome,bairro,numero,cidade,uf,complemento) "
@@ -34,11 +34,11 @@ public class DaoEndereco implements IDaoEndereco {
 	}
 
 	@Override
-	public EnderecoCliente buscarEnderecoCliente(EnderecoCliente enderecoCliente) throws SQLException {
+	public Endereco buscarEndereco(Endereco enderecoCliente) throws SQLException {
 		
 		ResultSet resultado = gerarResultSet(enderecoCliente);
 		
-		EnderecoCliente  auxEnderecoCliente = new EnderecoCliente();
+		Endereco auxEnderecoCliente = new Endereco();
 		
 		auxEnderecoCliente.setCodigo(resultado.getInt("codigo_endereco"));
 		auxEnderecoCliente.setNome(resultado.getString("nome"));
@@ -51,8 +51,8 @@ public class DaoEndereco implements IDaoEndereco {
 		return auxEnderecoCliente;
 	}
 
-	private ResultSet gerarResultSet(EnderecoCliente enderecoCliente) throws SQLException {
-		Connection con = new ConnectionManager().getConnection();
+	private ResultSet gerarResultSet(Endereco enderecoCliente) throws SQLException {
+		Connection con = ConnectionManager.getInstance().getConnection();
 		
 		String query = "SELECT * FROM endereco_cliente WHERE "
 				+ "endereco_cliente.nome=? OR "
@@ -79,14 +79,14 @@ public class DaoEndereco implements IDaoEndereco {
 	}
 
 	@Override
-	public void alterarEnderecoCliente(EnderecoCliente enderecoCliente) throws SQLException {
+	public void alterarEndereco(Endereco enderecoCliente) throws SQLException {
 		// TODO Auto-generated method stub
 
 	}
 
 	@Override
-	public void removeEnderecoCliente(EnderecoCliente enderecoCliente) throws SQLException {
-		Connection con = new ConnectionManager().getConnection();
+	public void removeEndereco(Endereco enderecoCliente) throws SQLException {
+		Connection con = ConnectionManager.getInstance().getConnection();
 		
 		String query = "DELETE FROM Endereco_Cliente WERE codigo_endereco = ?;";
 		PreparedStatement pstm = con.prepareStatement(query);

@@ -7,7 +7,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.appdemudancas.model.Carro;
+import src.com.appdemudancas.model.Carro;
 
 public class DaoCarro implements IDaoCarro {
 
@@ -58,7 +58,7 @@ public class DaoCarro implements IDaoCarro {
 	}
 
 	private ResultSet gerarResultSet(Carro carro) throws SQLException {
-		Connection con = new ConnectionManager().getConnection();
+		Connection con = ConnectionManager.getInstance().getConnection();
 		
 		String query = "SELECT * FROM carro WHERE "
 				+ "carro.chassi=? OR "
@@ -84,7 +84,7 @@ public class DaoCarro implements IDaoCarro {
 
 	@Override
 	public void alterarCarro(Carro carro) throws SQLException {
-		Connection con = new ConnectionManager().getConnection();
+		Connection con = ConnectionManager.getInstance().getConnection();
 		
 		String query = "UPDATE Carro SET placa = ?, marca= ?, modelo=?, chassi=?,"
 				+ "cor=?, ano_fabricacao = ? WHERE placa = ?;";
@@ -104,7 +104,7 @@ public class DaoCarro implements IDaoCarro {
 
 	@Override
 	public void removeCarro(Carro carro) throws SQLException {
-		Connection con = new ConnectionManager().getConnection();
+		Connection con = ConnectionManager.getInstance().getConnection();
 		
 		String query = "DELETE FROM Carro WHERE placa = ?;";
 		PreparedStatement pstm = con.prepareStatement(query);

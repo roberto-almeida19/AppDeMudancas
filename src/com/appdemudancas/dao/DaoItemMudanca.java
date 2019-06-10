@@ -15,7 +15,7 @@ public class DaoItemMudanca implements IDaoItemMudanca {
 	@Override
 	public void criarItemMudanca(ItemMudanca itemMudanca) throws SQLException {
 
-		Connection con = new ConnectionManager().getConnection();
+		Connection con = ConnectionManager.getInstance().getConnection();
 		
 		String query = "INSERT INTO item_da_mudanca("
 				+ "codigo,nome,altura,largura,comprimento,peso,e_fragil,MudancaCodigo_mudanca) "
@@ -70,7 +70,7 @@ public class DaoItemMudanca implements IDaoItemMudanca {
 	}
 
 	private ResultSet gerarResultSet(ItemMudanca itemMudanca) throws SQLException {
-		Connection con = new ConnectionManager().getConnection();
+		Connection con = ConnectionManager.getInstance().getConnection();
 		
 		String query = "SELECT * FROM item_da_mudanca WHERE "
 				+ "item_da_mudanca.nome=? OR "
@@ -89,7 +89,7 @@ public class DaoItemMudanca implements IDaoItemMudanca {
 		pstm.setDouble(4, itemMudanca.getComprimento());
 		pstm.setDouble(5, itemMudanca.getPeso());
 		pstm.setString(6, itemMudanca.isE_fragil() ? "s" : "n");
-		pstm.setInt(7, itemMudanca.getCodigo_mudanca());
+		pstm.setInt(7, itemMudanca.get());
 		pstm.setInt(8, itemMudanca.getCodigo());
 		
 		ResultSet resultado = pstm.executeQuery();
@@ -106,7 +106,7 @@ public class DaoItemMudanca implements IDaoItemMudanca {
 
 	@Override
 	public void removeItemMudanca(ItemMudanca itemMudanca) throws SQLException {
-		Connection con = new ConnectionManager().getConnection();
+		Connection con = ConnectionManager.getInstance().getConnection();
 		
 		String query = "DELETE FROM Item_Da_Mudanca WERE codigo_item = ?;";
 		PreparedStatement pstm = con.prepareStatement(query);

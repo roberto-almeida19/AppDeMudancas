@@ -5,14 +5,14 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import com.appdemudancas.model.EnderecoMotorista;
+import com.appdemudancas.model.Endereco;
 
-public class DaoEnderecoMotorista implements IDaoEnderecoMotorista {
+public class DaoEnderecoMotorista implements IDaoEndereco {
 
 	@Override
-	public void criarEnderecoMotorista(EnderecoMotorista enderecoMotorista) throws SQLException {
+	public void criarEndereco(Endereco enderecoMotorista) throws SQLException {
 		
-		Connection con = new ConnectionManager().getConnection();
+		Connection con = ConnectionManager.getInstance().getConnection();
 		
 		String query = "INSERT INTO endereco_motorista("
 				+ "nome,bairro,numero,cidade,uf,complemento) "
@@ -33,11 +33,11 @@ public class DaoEnderecoMotorista implements IDaoEnderecoMotorista {
 	}
 
 	@Override
-	public EnderecoMotorista buscarEnderecoMotorista(EnderecoMotorista enderecoMotorista) throws SQLException {
+	public Endereco buscarEndereco(Endereco enderecoMotorista) throws SQLException {
 		
 		ResultSet resultado = gerarResultSet(enderecoMotorista);
 		
-		EnderecoMotorista  auxEnderecoMotorista = new EnderecoMotorista();
+		Endereco auxEnderecoMotorista = new Endereco();
 		
 		auxEnderecoMotorista.setCodigo(resultado.getInt("codigo_endereco"));
 		auxEnderecoMotorista.setNome(resultado.getString("nome"));
@@ -52,8 +52,8 @@ public class DaoEnderecoMotorista implements IDaoEnderecoMotorista {
 		return auxEnderecoMotorista;
 	}
 
-	private ResultSet gerarResultSet(EnderecoMotorista enderecoMotorista) throws SQLException {
-		Connection con = new ConnectionManager().getConnection();
+	private ResultSet gerarResultSet(Endereco enderecoMotorista) throws SQLException {
+		Connection con = ConnectionManager.getInstance().getConnection();
 		
 		String query = "SELECT * FROM endereco_motorista WHERE "
 				+ "endereco_motorista.nome=? OR "
@@ -80,8 +80,8 @@ public class DaoEnderecoMotorista implements IDaoEnderecoMotorista {
 	}
 
 	@Override
-	public void alterarEnderecoMotorista(EnderecoMotorista enderecoMotorista) throws SQLException {
-		Connection con = new ConnectionManager().getConnection();
+	public void alterarEndereco(Endereco enderecoMotorista) throws SQLException {
+		Connection con = ConnectionManager.getInstance().getConnection();
 		
 		String query = "UPDATE Enderoco_Motorista SET nome = ?, bairro = ?, numero = ?, cidade = ?, uf = ?, complemento = ?, codigo = ?"
 				+ "	WHERE codigo = ?;";
@@ -104,8 +104,8 @@ public class DaoEnderecoMotorista implements IDaoEnderecoMotorista {
 	}
 
 	@Override
-	public void removeEnderecoMotorista(EnderecoMotorista enderecoMotorista) throws SQLException {
-		Connection con = new ConnectionManager().getConnection();
+	public void removeEndereco(Endereco enderecoMotorista) throws SQLException {
+		Connection con = ConnectionManager.getInstance().getConnection();
 		
 		String query = "DELETE FROM Endereco_Motorista WERE codigo_endereco = ?;";
 		PreparedStatement pstm = con.prepareStatement(query);
