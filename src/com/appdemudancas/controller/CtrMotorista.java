@@ -34,18 +34,6 @@ public class CtrMotorista {
 		return listResultado;
 	}
 
-	public List<Motorista> pesquisarTodosMotorista() {
-		List<Motorista> listResultado = null;
-
-		try {
-			listResultado = daoMotorista.buscarTodosMotorista();
-		} catch (SQLException e) {
-
-			e.printStackTrace();
-		}
-
-		return listResultado;
-	}
 
 	public void alterarMotorista(Motorista motorista) {
 		try {

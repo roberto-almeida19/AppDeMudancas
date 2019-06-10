@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.appdemudancas.model.Administrador;
 import com.appdemudancas.model.Carro;
 import com.appdemudancas.model.Cliente;
 import com.appdemudancas.model.Motorista;
@@ -20,7 +19,16 @@ public class ControladorDispatcher {
 	@RequestMapping(value= {"/",""}, method=RequestMethod.GET)
 	public String index(Model model) {	
 		
-		return "Login";
+				
+		return "Index";
+	}
+	
+	@RequestMapping(value= {"/LoginMotorista"}, method=RequestMethod.GET)
+	public String loginMotorista(Model model) {	
+		
+		model.addAttribute("motorista", new Motorista());
+				
+		return "LoginMotorista";
 	}
 	
 	//motorista
@@ -39,12 +47,12 @@ public class ControladorDispatcher {
 		
 		motorista.setData_cadastro(new Date());
 		
-		CtrEnderecoMotorista ctrEnderecoMotorista = new CtrEnderecoMotorista();
+		//CtrEnderecoMotorista ctrEnderecoMotorista = new CtrEnderecoMotorista();
 		CtrCnh ctrCnh = new CtrCnh();
 		CtrMotorista ctrMotorista = new CtrMotorista();
 		
-		ctrEnderecoMotorista.cadastrarEnderecoMotorista(motorista.getEndereco_motorista());
-		ctrCnh.cadastrarCnh(motorista.getCnh());
+		//ctrEnderecoMotorista.cadastrarEnderecoMotorista(motorista.getEndereco_motorista());
+		//ctrCnh.cadastrarCnh(motorista.getCnh());
 		ctrMotorista.cadastrarMotorista(motorista);
 		
 		
@@ -56,9 +64,9 @@ public class ControladorDispatcher {
 	public String carregarListarMotorista(Model model) {
 		
 		CtrMotorista ctrMotorista = new CtrMotorista();
-		model.addAttribute("motoristas",
-				ctrMotorista.pesquisarTodosMotorista());
-		
+		/*model.addAttribute("motoristas",
+				ctrMotorista.pesquisarMotorista());
+		*/
 		return "ListarMotorista";
 	}
 	
@@ -98,8 +106,8 @@ public class ControladorDispatcher {
 	public String receberCadastroMudanca1(@ModelAttribute("cadastroMudanca1")Mudanca parametroMudanca,
 			Model model) {
 		System.out.println(parametroMudanca.toString());
-		System.out.println(parametroMudanca.getEndereco_final().getBairro());
-		System.out.println(parametroMudanca.getEndereco_inicial().getBairro());
+		//System.out.println(parametroMudanca.getEndereco_final().getBairro());
+		//System.out.println(parametroMudanca.getEndereco_inicial().getBairro());
 		
 		return "CadastroMudanca";
 	}

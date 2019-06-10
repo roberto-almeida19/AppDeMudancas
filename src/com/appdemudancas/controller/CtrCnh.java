@@ -40,7 +40,7 @@ public class CtrCnh {
 	public void alterarCnh(Cnh cnh) {
 		try {
 			daoCnh.alterarCnh(cnh);
-		} catch (SQLException e) {
+		} catch (SQLException | IOException e) {
 
 			e.printStackTrace();
 		}

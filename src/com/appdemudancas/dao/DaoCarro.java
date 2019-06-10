@@ -13,7 +13,7 @@ public class DaoCarro implements IDaoCarro {
 
 	@Override
 	public void criarCarro(Carro carro) throws SQLException {
-		Connection con = new ConnectionManager().getConnection();
+		Connection con = ConnectionManager.getInstance().getConnection();
 		
 		String query = "INSERT INTO carro(placa, marca, modelo, chassi, cor, ano_fabricacao"
 				+ "VALUES(?,?,?,?,?);";
