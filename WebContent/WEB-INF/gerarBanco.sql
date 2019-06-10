@@ -2,15 +2,12 @@ CREATE DATABASE appdemudancas;
 
 USE appdemudancas;
 
-CREATE TABLE endereco_motorista(
+CREATE TABLE endereco(
 
 	codigo_endereco int AUTO_INCREMENT PRIMARY KEY,
 	nome varchar(30),
-	bairro varchar(30),
-	numero int,
-	cidade varchar(20),
-	uf char(2),
-	complemento varchar(20)
+	cep char(8),
+	numero int
 
 );
 
@@ -33,34 +30,20 @@ CREATE TABLE motorista(
 	quantidade_ajudantes int,
 	cnhNumero_cnh varchar(11),
 	pontuacao decimal(2,1),
-	endereco_motoristaCodigo_endereco int,
+	enderecoCodigo_endereco int,
 	FOREIGN KEY(cnhNumero_cnh) REFERENCES cnh(numero_cnh),
-	FOREIGN KEY(endereco_motoristaCodigo_endereco) REFERENCES endereco_motorista(codigo_endereco)
+	FOREIGN KEY(enderecoCodigo_endereco) REFERENCES endereco(codigo_endereco)
 );
 
 CREATE TABLE carro(
 
-        codigo_carro int AUTO_INCREMENT PRIMARY KEY,
-        chassi varchar(17),
-        placa char(8),
+        placa char(8) PRIMARY KEY,
         ano_fabricacao int,
         marca varchar(20),
         modelo varchar(20),
         cor varchar(10),
         MotoristaCpf varchar(11),
         FOREIGN KEY(MotoristaCpf) REFERENCES motorista(cpf)
-);
-
-CREATE TABLE endereco_cliente(
-
-        codigo_endereco int AUTO_INCREMENT PRIMARY KEY,
-        nome varchar(30),
-        bairro varchar(30),
-        numero int,
-        cidade varchar(20),
-        uf char(2),
-        complemento varchar(20)
-
 );
 
 CREATE TABLE cliente(
@@ -72,8 +55,8 @@ CREATE TABLE cliente(
         email varchar(30),
         senha varchar(20),
         data_cadastro date,
-        endereco_clienteCodigo_endereco int,
-        FOREIGN KEY(endereco_clienteCodigo_endereco) REFERENCES endereco_cliente(codigo_endereco)
+        enderecoCodigo_endereco int,
+        FOREIGN KEY(enderecoCodigo_endereco) REFERENCES endereco(codigo_endereco)
 
 );
 
@@ -85,22 +68,12 @@ CREATE TABLE mudanca(
 	status varchar(11),
 	MotoristaCpf varchar(11),
 	ClienteCpf varchar(11),
+	EnderecoInicialCodigo int,
+	EnderecoFinalCodigo int,
 	FOREIGN KEY(MotoristaCpf) REFERENCES motorista(cpf),
-	FOREIGN KEY(ClienteCpf) REFERENCES cliente(cpf)
-
-);
-
-CREATE TABLE endereco_mudanca(
-
-	codigo_endereco int AUTO_INCREMENT PRIMARY KEY,
-        nome varchar(30),
-        bairro varchar(30),
-        numero int,
-        cidade varchar(20),
-        uf char(2),
-        complemento varchar(20),
-	MudancaCodigo_mudanca int,
-	FOREIGN KEY(MudancaCodigo_mudanca) REFERENCES mudanca(codigo_mudanca)
+	FOREIGN KEY(ClienteCpf) REFERENCES cliente(cpf),
+	FOREIGN KEY(EnderecoInicialCodigo) REFERENCES endereco(codigo_endereco),
+	FOREIGN KEY(EnderecoFinalCodigo) REFERENCES endereco(codigo_endereco)
 );
 
 CREATE TABLE item_da_mudanca(
@@ -116,13 +89,3 @@ CREATE TABLE item_da_mudanca(
 	FOREIGN KEY(MudancaCodigo_mudanca) REFERENCES mudanca(codigo_mudanca)
 
 );
-
-CREATE TABLE administrador(
-
-        codigo_administrador int AUTO_INCREMENT PRIMARY KEY,
-        nome varchar(20),
-        senha varchar(20),
-        data_cadastro date
-
-);
-
