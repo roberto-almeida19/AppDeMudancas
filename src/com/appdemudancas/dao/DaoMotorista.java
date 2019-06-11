@@ -34,7 +34,7 @@ public class DaoMotorista implements IDaoMotorista {
 		pstm.setString(8, motorista.getC.getNumero());
 		pstm.setInt(9, motorista.getQuantidadeAjudantes());
 		pstm.setDouble(10, motorista.getPontuacao());
-		pstm.setInt(11, motorista.getEndereco_motorista().getCodigo());
+		pstm.setInt(11, motorista.getE().getCodigo());
 
 		pstm.executeUpdate();
 

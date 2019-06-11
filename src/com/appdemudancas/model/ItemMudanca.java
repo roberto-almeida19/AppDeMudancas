@@ -9,7 +9,14 @@ public class ItemMudanca {
 	private double comprimento;
 	private double peso;
 	private boolean e_fragil;
+	private int codigoMudanca;
 	
+	public int getCodigoMudanca() {
+		return codigoMudanca;
+	}
+	public void setCodigoMudanca(int codigoMudanca) {
+		this.codigoMudanca = codigoMudanca;
+	}
 	public int getCodigo() {
 		return codigo;
 	}

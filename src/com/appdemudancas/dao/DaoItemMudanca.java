@@ -28,7 +28,7 @@ public class DaoItemMudanca implements IDaoItemMudanca {
 		pstm.setDouble(5, itemMudanca.getComprimento());
 		pstm.setDouble(6, itemMudanca.getPeso());
 		pstm.setString(7, itemMudanca.isE_fragil() ? "s" : "n");
-		pstm.setInt(7, itemMudanca.getCodigo_mudanca());
+		pstm.setInt(7, itemMudanca.getCodigoMudanca());
 		
 		pstm.executeUpdate();
 		
@@ -88,7 +88,7 @@ public class DaoItemMudanca implements IDaoItemMudanca {
 		pstm.setDouble(4, itemMudanca.getComprimento());
 		pstm.setDouble(5, itemMudanca.getPeso());
 		pstm.setString(6, itemMudanca.isE_fragil() ? "s" : "n");
-		pstm.setInt(7, itemMudanca.get());
+		pstm.setInt(7, itemMudanca.getCodigoMudanca());
 		pstm.setInt(8, itemMudanca.getCodigo());
 		
 		ResultSet resultado = pstm.executeQuery();

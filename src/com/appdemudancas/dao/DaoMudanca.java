@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.appdemudancas.model.ItemMudanca;
+import com.appdemudancas.model.Motorista;
 import com.appdemudancas.model.Mudanca;
 
 public class DaoMudanca implements IDaoMudanca {
@@ -15,7 +16,7 @@ public class DaoMudanca implements IDaoMudanca {
 	@Override
 	public void criarMudanca(Mudanca mudanca) throws SQLException {
 
-		Connection con = new ConnectionManager().getConnection();
+		Connection con = ConnectionManager.getInstance().getConnection();
 		
 		String query = "INSERT INTO mudanca("
 				+ "data_criacao,data_mudanca,status,MotoristaCpf,ClienteCpf) "
@@ -27,8 +28,8 @@ public class DaoMudanca implements IDaoMudanca {
 		pstm.setDate(2, new java.sql.Date(
 				mudanca.getData_mudanca().getTime()));
 		pstm.setString(3, mudanca.getStatus());
-		pstm.setString(4, mudanca.getMotorista_cpf());
-		pstm.setString(5, mudanca.getCliente_cpf());
+		pstm.setString(4, mudanca.getMotorista().getCpf());
+		pstm.setString(5, mudanca.getCliente().getCpf());
 		
 		pstm.executeUpdate();
 		
@@ -48,7 +49,7 @@ public class DaoMudanca implements IDaoMudanca {
 
 	private ResultSet gerarResultSet(Mudanca mudanca) throws SQLException {
 		
-		Connection con = new ConnectionManager().getConnection();
+		Connection con = ConnectionManager.getInstance().getConnection();
 		
 		String query = "SELECT * FROM mudanca WHERE "
 				+ "mudanca.data_criacao=? OR "
@@ -64,8 +65,8 @@ public class DaoMudanca implements IDaoMudanca {
 		pstm.setDate(2, new java.sql.Date(
 				mudanca.getData_mudanca().getTime()));
 		pstm.setString(3, mudanca.getStatus());
-		pstm.setString(4, mudanca.getMotorista_cpf());
-		pstm.setString(5, mudanca.getCliente_cpf());
+		pstm.setString(4, mudanca.getMotorista().getCpf());
+		pstm.setString(5, mudanca.getCliente().getCpf());
 		pstm.setInt(6, mudanca.getCodigo());
 		
 		ResultSet resultado = pstm.executeQuery();
@@ -91,7 +92,7 @@ public class DaoMudanca implements IDaoMudanca {
 					new java.util.Date(
 							resultado.getDate("data_mudanca").getTime()));
 			auxMudanca.setStatus(resultado.getString("status"));
-			auxMudanca.setMotorista_cpf(resultado.getString("MotoristaCpf"));
+			auxMudanca.setMotorista(new Motorista().setCpf((resultado.getString("MotoristaCpf"));
 			auxMudanca.setCliente_cpf(resultado.getString("ClienteCpf"));
 			
 

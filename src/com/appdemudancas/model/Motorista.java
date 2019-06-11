@@ -16,8 +16,21 @@ public class Motorista {
 	private Date data_cadastro;
 	private List<Carro> carros;
 	private List<Mudanca> mudanca;
+	private Endereco endereco;
+	private Cnh cnh;
 	
-	
+	public Cnh getCnh() {
+		return cnh;
+	}
+	public void setCnh(Cnh cnh) {
+		this.cnh = cnh;
+	}
+	public Endereco getEndereco() {
+		return endereco;
+	}
+	public void setEndereco(Endereco endereco) {
+		this.endereco = endereco;
+	}
 	public double getPontuacao() {
 		return pontuacao;
 	}
