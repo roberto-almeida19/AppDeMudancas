@@ -13,8 +13,20 @@ public class Mudanca {
 	private String endereco_inicial;
 	private String endereco_final;
 	private List<ItemMudanca> itens;
+	private Motorista motorista;
 	
-	
+	public Cliente getCliente() {
+		return cliente;
+	}
+	public void setCliente(Cliente cliente) {
+		this.cliente = cliente;
+	}
+	public Motorista getMotorista() {
+		return motorista;
+	}
+	public void setMotorista(Motorista motorista) {
+		this.motorista = motorista;
+	}
 	public int getCodigo() {
 		return codigo;
 	}
@@ -56,18 +68,5 @@ public class Mudanca {
 	}
 	public void setItens(List<ItemMudanca> itens) {
 		this.itens = itens;
-	}
-	private Motorista motorista;
-	public Cliente getCliente() {
-		return cliente;
-	}
-	public void setCliente(Cliente cliente) {
-		this.cliente = cliente;
-	}
-	public Motorista getMotorista() {
-		return motorista;
-	}
-	public void setMotorista(Motorista motorista) {
-		this.motorista = motorista;
 	}
 }

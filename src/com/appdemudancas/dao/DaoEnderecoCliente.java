@@ -14,17 +14,13 @@ public class DaoEnderecoCliente implements IDaoEndereco {
 		
 		Connection con = ConnectionManager.getInstance().getConnection();
 		
-		String query = "INSERT INTO endereco_cliente("
-				+ "nome,bairro,numero,cidade,uf,complemento) "
-				+ "VALUES(?,?,?,?,?,?);";
+		String query = "INSERT INTO endereco("
+				+ "nome,numero) "
+				+ "VALUES(?,?);";
 		
 		PreparedStatement pstm = con.prepareStatement(query);
 		pstm.setString(1, enderecoCliente.getNome());
-		pstm.setString(2, enderecoCliente.getBairro());
-		pstm.setInt(3, enderecoCliente.getNumero());
-		pstm.setString(4, enderecoCliente.getCidade());
-		pstm.setString(5, enderecoCliente.getUf());
-		pstm.setString(6, enderecoCliente.getComplemento());
+		pstm.setInt(2, enderecoCliente.getNumero());
 		
 		pstm.executeUpdate();
 		

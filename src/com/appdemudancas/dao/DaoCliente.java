@@ -7,6 +7,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+
 import com.appdemudancas.model.Cliente;
 import com.appdemudancas.model.Mudanca;
 
@@ -16,19 +17,17 @@ public class DaoCliente implements IDaoCliente {
 	public void criarCliente(Cliente cliente) throws SQLException {
 
 		Connection con = ConnectionManager.getInstance().getConnection();
-
 		String query = "INSERT INTO cliente("
 				+ "cpf,nome,telefone,data_nascimento,email,"
 				+ "senha,data_cadastro,"
-				+ "endereco) "
+				+ "enderecoCodigo_endereco) "
 				+ "VALUES(?,?,?,?,?,?,?,?);";
 
 		PreparedStatement pstm = con.prepareStatement(query);
 		pstm.setString(1, cliente.getCpf());
 		pstm.setString(2, cliente.getNome());
 		pstm.setString(3, cliente.getTelefone());
-		pstm.setDate(4, new java.sql.Date(
-				cliente.getData_nascimento().getTime()));
+		pstm.setDate(4, new java.sql.Date(	cliente.getData_nascimento().getTime()));
 		pstm.setString(5, cliente.getEmail());
 		pstm.setString(6, cliente.getSenha());
 		pstm.setDate(7, new java.sql.Date(

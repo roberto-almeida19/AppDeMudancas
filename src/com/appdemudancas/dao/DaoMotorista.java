@@ -17,7 +17,7 @@ public class DaoMotorista implements IDaoMotorista {
 	@Override
 	public void criarMotorista(Motorista motorista) throws SQLException {
 
-		Connection con = new ConnectionManager().getConnection();
+		Connection con = ConnectionManager.getInstance().getConnection();
 
 		String query = "INSERT INTO motorista(cpf,nome,telefone," + "data_nascimento,email,senha,data_cadastro,"
 				+ "cnhNumero_cnh,quantidade_ajudantes,pontuacao" + "endereco_clienteCodigo_endereco) "
@@ -31,7 +31,7 @@ public class DaoMotorista implements IDaoMotorista {
 		pstm.setString(5, motorista.getEmail());
 		pstm.setString(6, motorista.getSenha());
 		pstm.setDate(7, new java.sql.Date(motorista.getData_cadastro().getTime()));
-		pstm.setString(8, motorista.getCnh().getNumero());
+		pstm.setString(8, motorista.getC.getNumero());
 		pstm.setInt(9, motorista.getQuantidadeAjudantes());
 		pstm.setDouble(10, motorista.getPontuacao());
 		pstm.setInt(11, motorista.getEndereco_motorista().getCodigo());
@@ -72,7 +72,7 @@ public class DaoMotorista implements IDaoMotorista {
 			auxMotorista.setQuantidadeAjudantes(resultado.getInt("quantidade_ajudantes"));
 
 			auxMotorista.setEndereco_motorista(
-					new DaoEnderecoMotorista().buscarEnderecoMotorista(auxMotorista.getEndereco_motorista()));
+					new DaoEnderecoMotorista().buscarEnderecoMotorista(auxMotorista.g()));
 
 			auxMotorista.setPontuacao(resultado.getDouble("pontuacao"));
 

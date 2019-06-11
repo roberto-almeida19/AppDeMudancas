@@ -1,31 +1,30 @@
 package com.appdemudancas.controller;
 
 import java.sql.SQLException;
-import java.util.List;
 
 import com.appdemudancas.dao.DaoEnderecoMotorista;
-import com.appdemudancas.dao.IDaoEnderecoMotorista;
-import com.appdemudancas.model.EnderecoMotorista;
+import com.appdemudancas.dao.IDaoEndereco;
+import com.appdemudancas.model.Endereco;
 
 public class CtrEnderecoMotorista {
 
-	IDaoEnderecoMotorista daoEnderecoMotorista = new DaoEnderecoMotorista();
+	IDaoEndereco daoEnderecoMotorista = new DaoEnderecoMotorista();
 
-	public void cadastrarEnderecoMotorista(EnderecoMotorista enderecoMotorista) {
+	public void cadastrarEnderecoMotorista(Endereco enderecoMotorista) {
 		try {
-			daoEnderecoMotorista.criarEnderecoMotorista(enderecoMotorista);
+			daoEnderecoMotorista.criarEndereco(enderecoMotorista);
 		} catch (SQLException e) {
 
 			e.printStackTrace();
 		}
 	}
 
-	public EnderecoMotorista pesquisarEnderecoMotorista(EnderecoMotorista enderecoMotorista) {
+	public Endereco pesquisarEndereco(Endereco enderecoMotorista) {
 
-		EnderecoMotorista enderecoMotoristaResultado = null;
+		Endereco enderecoMotoristaResultado = null;
 
 		try {
-			enderecoMotoristaResultado = daoEnderecoMotorista.buscarEnderecoMotorista(enderecoMotorista);
+			enderecoMotoristaResultado = daoEnderecoMotorista.buscarEndereco(enderecoMotorista);
 		} catch (SQLException e) {
 
 			e.printStackTrace();
@@ -34,18 +33,18 @@ public class CtrEnderecoMotorista {
 		return enderecoMotoristaResultado;
 	}
 
-	public void alterarEnderecoMotorista(EnderecoMotorista enderecoMotorista) {
+	public void alterarEndereco(Endereco enderecoMotorista) {
 		try {
-			daoEnderecoMotorista.alterarEnderecoMotorista(enderecoMotorista);
+			daoEnderecoMotorista.alterarEndereco(enderecoMotorista);
 		} catch (SQLException e) {
 
 			e.printStackTrace();
 		}
 	}
 
-	public void removerEnderecoMotorista(EnderecoMotorista enderecoMotorista) {
+	public void removerEndereco(Endereco enderecoMotorista) {
 		try {
-			daoEnderecoMotorista.removeEnderecoMotorista(enderecoMotorista);
+			daoEnderecoMotorista.removeEndereco(enderecoMotorista);
 		} catch (SQLException e) {
 
 			e.printStackTrace();

@@ -8,7 +8,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.appdemudancas.model.ItemMudanca;
-import com.appdemudancas.model.Mudanca;
 
 public class DaoItemMudanca implements IDaoItemMudanca {
 

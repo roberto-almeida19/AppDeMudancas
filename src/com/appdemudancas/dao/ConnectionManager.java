@@ -8,9 +8,9 @@ public class ConnectionManager {
 	
 	private static ConnectionManager instance;
 	private Connection connection;
-	private String databaseUrl = "jdbc:mariadb://localhost:3306/lojadedoces";
+	private String databaseUrl = "jdbc:mariadb://localhost:3306/appdemudancas";
 	private String user = "root";
-	private String password = "$(Tiger123)";
+	private String password = "26450909r";
 	
 	private ConnectionManager() {
 		try {
