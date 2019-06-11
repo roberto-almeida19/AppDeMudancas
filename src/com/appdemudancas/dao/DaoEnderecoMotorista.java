@@ -116,4 +116,28 @@ public class DaoEnderecoMotorista implements IDaoEndereco {
 		con.close();
 	}
 
+	@Override
+	public void criarEndereco(Endereco endereco) throws SQLException {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public Endereco buscarEndereco(Endereco endereco) throws SQLException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void alterarEndereco(Endereco endereco) throws SQLException {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void removeEndereco(Endereco endereco) throws SQLException {
+		// TODO Auto-generated method stub
+		
+	}
+
 }
