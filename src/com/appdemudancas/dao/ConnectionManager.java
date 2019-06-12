@@ -8,9 +8,9 @@ public class ConnectionManager {
 	
 	private static ConnectionManager instance;
 	private Connection connection;
-	private String databaseUrl = "jdbc:mariadb://localhost:3306/appdemudancas";
-	private String user = "root";
-	private String password = "26450909r";
+	private String databaseUrl;
+	private String user;
+	private String password;
 	
 	private ConnectionManager() {
 		try {
@@ -19,6 +19,10 @@ public class ConnectionManager {
 			
 			e.printStackTrace();
 		}
+		
+		databaseUrl = "jdbc:maridb://localhost:3306/appdemudancas";
+		user = "root";
+		password = "1234";
 		
 	}
 	
@@ -29,7 +33,7 @@ public class ConnectionManager {
 		return instance;
 	}
 	
-	public static Connection getConnection() throws SQLException {
+	public Connection getConnection() throws SQLException {
 		
 		if (connection == null || connection.isClosed()) {
 			connection = DriverManager.getConnection(databaseUrl,user,password);

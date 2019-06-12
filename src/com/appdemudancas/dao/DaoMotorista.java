@@ -31,10 +31,10 @@ public class DaoMotorista implements IDaoMotorista {
 		pstm.setString(5, motorista.getEmail());
 		pstm.setString(6, motorista.getSenha());
 		pstm.setDate(7, new java.sql.Date(motorista.getData_cadastro().getTime()));
-		pstm.setString(8, motorista.getC.getNumero());
+		pstm.setString(8, motorista.getCnh().getNumero());
 		pstm.setInt(9, motorista.getQuantidadeAjudantes());
 		pstm.setDouble(10, motorista.getPontuacao());
-		pstm.setInt(11, motorista.getE().getCodigo());
+		pstm.setInt(11, motorista.getEndereco().getCodigo());
 
 		pstm.executeUpdate();
 
@@ -71,8 +71,8 @@ public class DaoMotorista implements IDaoMotorista {
 			auxMotorista.setData_cadastro(new java.util.Date(resultado.getDate("data_cadastro").getTime()));
 			auxMotorista.setQuantidadeAjudantes(resultado.getInt("quantidade_ajudantes"));
 
-			auxMotorista.setEndereco_motorista(
-					new DaoEnderecoMotorista().buscarEnderecoMotorista(auxMotorista.g()));
+			auxMotorista.setEndereco(
+					new DaoEndereco().buscarEnderecoMotorista(auxMotorista.getEndereco()));
 
 			auxMotorista.setPontuacao(resultado.getDouble("pontuacao"));
 
@@ -89,7 +89,7 @@ public class DaoMotorista implements IDaoMotorista {
 	}
 
 	private ResultSet gerarResultSet(Motorista motorista) throws SQLException {
-		Connection con = new ConnectionManager().getConnection();
+		Connection con = ConnectionManager.getInstance().getConnection();
 
 		String query = "SELECT * FROM motorista WHERE " + "motorista.cpf=? OR " + "motorista.nome=? OR "
 				+ "motorista.telefone=? OR " + "motorista.data_nascimento=? OR " + "motorista.email=? OR "
@@ -107,7 +107,7 @@ public class DaoMotorista implements IDaoMotorista {
 		pstm.setString(7, motorista.getCnh().getNumero());
 		pstm.setInt(8, motorista.getQuantidadeAjudantes());
 		pstm.setDouble(9, motorista.getPontuacao());
-		pstm.setInt(10, motorista.getEndereco_motorista().getCodigo());
+		pstm.setInt(10, motorista.getEndereco().getCodigo());
 
 		ResultSet resultado = pstm.executeQuery();
 
@@ -117,7 +117,7 @@ public class DaoMotorista implements IDaoMotorista {
 
 	@Override
 	public void alterarMotorista(Motorista motorista) throws SQLException {
-		Connection con = new ConnectionManager().getConnection();
+		Connection con = ConnectionManager.getInstance().getConnection();
 
 		String query = "UPDATE motorista SET quantidadeAjudantes = ?, pontuacao = ?,"
 				+ "nome = ?, telefone = ?, cpf = ? email = ?, senha = ?"
@@ -135,7 +135,7 @@ public class DaoMotorista implements IDaoMotorista {
 			pstm.setString(7, motorista.getSenha());
 			pstm.setDate(8, (Date) motorista.getData_nascimento());
 			pstm.setDate(9, (Date) motorista.getData_cadastro());
-			pstm.setInt(10, motorista.getEndereco_motorista().getCodigo()); // mudar para tipo de endereco
+			pstm.setInt(10, motorista.getEndereco().getCodigo()); // mudar para tipo de endereco
 			pstm.executeUpdate();
 			pstm.close();
 		} catch (SQLException ex) {
@@ -146,7 +146,7 @@ public class DaoMotorista implements IDaoMotorista {
 
 	@Override
 	public void removeMotorista(Motorista motorista) throws SQLException {
-		Connection con = new ConnectionManager().getConnection();
+		Connection con = ConnectionManager.getInstance().getConnection();
 
 		String query = "DELETE FROM Motorista WERE cpf = ?;";
 		PreparedStatement pstm = con.prepareStatement(query);

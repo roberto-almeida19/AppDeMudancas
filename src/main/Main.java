@@ -4,7 +4,7 @@ import java.sql.SQLException;
 import java.util.Date;
 
 import com.appdemudancas.dao.DaoCliente;
-import com.appdemudancas.dao.DaoEnderecoCliente;
+import com.appdemudancas.dao.DaoEndereco;
 import com.appdemudancas.model.Cliente;
 import com.appdemudancas.model.Endereco;
 
@@ -25,7 +25,7 @@ public class Main {
 		cliente.setEndereco_cliente(endereco);
 		
 		try {
-			new DaoEnderecoCliente().criarEndereco(endereco);
+			new DaoEndereco().criarEnderecoCliente(endereco);
 			new DaoCliente().criarCliente(cliente);
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
