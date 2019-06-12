@@ -81,17 +81,19 @@ public class ControladorDispatcher {
 	
 	@RequestMapping(value= "/CadastroCliente", method=RequestMethod.GET)
 	public String carregarCadastroCliente(Model model) {
-		
-		
-		model.addAttribute("cadastroCliente", new Cliente());
-		
+				
 		return "CadastroCliente";
 	}
 	
-	@RequestMapping(value= "/CadastroCliente", method=RequestMethod.POST)
-	public String receberCadastroCliente(@ModelAttribute("cadastroCliente")Cliente parametroCliente,
+	@RequestMapping(value= "cadastrarCliente", method=RequestMethod.POST)
+	public String receberCadastroCliente( Cliente cliente,
 			Model model) {
-		System.out.println(parametroCliente.toString());
+		
+		CtrCliente ctrCliente = new CtrCliente();
+		
+		ctrCliente.cadastrarCliente(cliente);
+		
+		model.addAttribute("msg","Cadastro realizado");
 		
 		return "CadastroCliente";
 	}
@@ -102,12 +104,13 @@ public class ControladorDispatcher {
 		return "CadastroMudanca";
 	}
 	
-	@RequestMapping(value= "/CadastroMudanca", method=RequestMethod.POST)
-	public String receberCadastroMudanca1(@ModelAttribute("cadastroMudanca1")Mudanca parametroMudanca,
+	@RequestMapping(value= "cadastrarMudanca", method=RequestMethod.POST)
+	public String cadastroMudanca(Mudanca mudanca,
 			Model model) {
-		System.out.println(parametroMudanca.toString());
-		//System.out.println(parametroMudanca.getEndereco_final().getBairro());
-		//System.out.println(parametroMudanca.getEndereco_inicial().getBairro());
+		
+		CtrMudanca ctrMudanca = new CtrMudanca();
+		
+		ctrMudanca.cadastrarMudanca(mudanca);
 		
 		return "CadastroMudanca";
 	}

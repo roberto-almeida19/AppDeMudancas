@@ -9,7 +9,7 @@ import com.appdemudancas.model.Motorista;
 
 public class CtrMotorista {
 
-	IDaoMotorista daoMotorista = new DaoMotorista();
+	private IDaoMotorista daoMotorista = new DaoMotorista();
 
 	public void cadastrarMotorista(Motorista motorista) {
 		try {

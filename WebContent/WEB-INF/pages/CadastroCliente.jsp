@@ -1,12 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 
-<!-- Essa anotação "taglib" é importante: ela vai permitir usarmos tags da biblioteca de 
-formulario do spring. Esse atributo "uri" é o caminho onde devem ser pegas
-as tags (no caso, do site do spring) e o "prefix" é só pra simplificar a forma que vamos 
-usar essas tags (no nosso caso, sempre com o prefixo "formSpring" ao invés de ter que 
-digitar todo o caminho do site do spring)-->
-<%@ taglib uri="http://www.springframework.org/tags/form" prefix="formSpring" %>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -15,67 +9,57 @@ digitar todo o caminho do site do spring)-->
 	</head>
 	<body>
 
-		<formSpring:form id="form2" action="" method="post" modelAttribute="cadastroCliente">
+		<form action="cadastrarCliente" method="post">
 	
 			<div>
-				<formSpring:label path="nome">Nome*</formSpring:label>
-				<formSpring:input path="nome"/>
+				Nome:
+				<input type="text" name="nome"/>
 			</div>
 		
 			<div>
-				<formSpring:label path="telefone">Telefone*</formSpring:label>
-				<formSpring:input path="telefone"/>
+				Telefone:
+				<input type="text" name="telefone"/>
 			</div>
 		
 			<div>
-				<formSpring:label path="cpf">CPF*</formSpring:label>
-				<formSpring:input path="cpf"/>
+				CPF:
+				<input type="text" name="cpf"/>
 			</div>
 		
 			<div>
-				<formSpring:label path="data_nascimento">Nascimento*</formSpring:label>
-				<formSpring:input path="data_nascimento"/>
+				Data de nascimento:
+				<input type="text" name="data_nascimento"/>
 			</div>
 			
 			<div>
-				<formSpring:label path="endereco_cliente.nome">Endereço*</formSpring:label>
-				<formSpring:input path="endereco_cliente.nome"/>
+				Logradouro:
+				<input type="text" name="endereco_cliente.nome"/>
 			</div>
 			
 			<div>
-				<formSpring:label path="endereco_cliente.numero">Número*</formSpring:label>
-				<formSpring:input path="endereco_cliente.numero"/>
+				Número:
+				<input type="text" name="endereco_cliente.numero"/>
+			</div>
+			
+			<div>
+				CEP:
+				<input type="text" name="endereco_cliente.cep"/>
 			</div>
 			<div>
-				<formSpring:label path="endereco_cliente.bairro">Bairro*</formSpring:label>
-				<formSpring:input path="endereco_cliente.bairro"/>
+				Email:
+				<input type="text" name="email"/>
 			</div>
+			
 			<div>
-				<formSpring:label path="endereco_cliente.cidade">Cidade*</formSpring:label>
-				<formSpring:input path="endereco_cliente.cidade"/>
+				Senha:
+				<input type="text" name="senha"/>
 			</div>
+			
 			<div>
-				<formSpring:label path="endereco_cliente.uf">UF*</formSpring:label>
-				<formSpring:input path="endereco_cliente.uf"/>
+				Confirmar senha:
+				<input type="text" name="confirmarSenha"/>
 			</div>
-			<div>
-				<formSpring:label path="endereco_cliente.complemento">Complemento</formSpring:label>
-				<formSpring:input path="endereco_cliente.complemento"/>
-			</div>
-			<div>
-				<formSpring:label path="email">Email*</formSpring:label>
-				<formSpring:input path="email"/>
-			</div>
-			<div>
-				<formSpring:label path="senha">Senha*:</formSpring:label>
-				<formSpring:input path="senha"/>
-			</div>
-			<div>
-				<formSpring:label path="senha">Confirmar senha*:</formSpring:label>
-				<formSpring:input path="senha"/>
-			</div>
-			<formSpring:button>Enviar</formSpring:button>
-			<formSpring:button>Voltar</formSpring:button>
-		</formSpring:form>		
+			<input type="submit" value="Enviar"/>
+		</form>		
 	</body>
 </html>
