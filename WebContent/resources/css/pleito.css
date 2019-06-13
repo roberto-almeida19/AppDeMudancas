@@ -1,0 +1,30 @@
+#lbl-mes-ref{
+	padding-left: 15px;
+}
+
+#titulo-pleito{
+    padding-bottom: 15px;
+}
+.info-atento{
+	border-bottom: 1px solid;
+	padding:10px;
+	margin-bottom: 10px;
+}
+.info-vivo{
+	padding:10px;
+	border-bottom: 1px solid;
+}
+
+#conteudo{
+	padding-top:10px;
+	height: fit-content !important;
+}
+#enviar-pleito{
+	padding-top:30px;
+}
+.center-text{
+	text-align: center;
+}
+#mes-referencia{
+	padding-top:10px;
+}

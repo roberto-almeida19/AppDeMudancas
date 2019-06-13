@@ -40,6 +40,7 @@
 			</c:forEach>
 			
 		</table>
-			
+			<script src="<c:url value="/resources/js/util/jquery.min.js"/>"></script>
+			<script src="<c:url value="/resources/js/projeto/listarClientes.js"/>"></script>
 	</body>
 </html>

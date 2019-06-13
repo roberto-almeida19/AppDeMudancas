@@ -1,0 +1,15 @@
+.botao-adicionar{
+	top:20px;
+	position: relative;
+}
+.metrica {
+	border-bottom: outset;
+	padding: 10px 10px;
+}
+.controles{
+	padding: 20px;
+}
+.div-datas{
+	margin:30px 0px 20px 0px;
+	
+}

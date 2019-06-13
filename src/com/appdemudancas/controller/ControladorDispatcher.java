@@ -2,11 +2,13 @@ package com.appdemudancas.controller;
 
 import java.util.Date;
 
+import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.appdemudancas.model.Carro;
 import com.appdemudancas.model.Cliente;
@@ -20,7 +22,7 @@ public class ControladorDispatcher {
 	public String index(Model model) {	
 		
 				
-		return "Index";
+		return "ListarClientes";
 	}
 	
 	@RequestMapping(value= {"/LoginMotorista"}, method=RequestMethod.GET)
@@ -59,6 +61,15 @@ public class ControladorDispatcher {
 		
 		return "formularioMotorista";
 	}
+	@ResponseBody
+	@RequestMapping(value = "/listar/carros", produces = MediaType.APPLICATION_JSON_VALUE)
+	public Carro listarCarros() {
+		Carro carro = new Carro();
+		carro.setAnoFabricacao(2010);
+		carro.setCpfMotorista("277727272");
+		return carro;
+	}
+	
 	
 	@RequestMapping(value= "/ListarMotorista", method=RequestMethod.GET)
 	public String carregarListarMotorista(Model model) {

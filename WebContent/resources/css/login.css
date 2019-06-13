@@ -1,0 +1,83 @@
+body, html {
+	height: 100%;
+	background:#e6e4e4;
+	position: relative;
+}
+
+#login-box {
+	position: absolute;
+	top: 15vh;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 350px;
+	margin: 0 auto;
+	border: 1px solid #07393c;
+	border-radius:10px;
+	background: rgba(87, 194, 247, 0.19);
+	min-height: 250px;
+	padding: 30px;
+	z-index: 9999;
+}
+
+#login-box .logo .logo-caption {
+	font-family: 'Calibri', cursive;
+	color: white;
+	text-align: center;
+	margin-bottom: 0px;
+}
+
+#login-box .logo .tweak {
+	color: #ff5252;
+}
+
+#login-box .controls {
+	padding-top: 0px;
+}
+
+#login-box .controls input {
+	border-radius: 0px;
+	background: #f0edee;
+/* 	border: 0px; */
+	color: #0a090c;
+	font-family: 'Calibri', sans-serif;
+}
+
+#login-box .controls input:focus {
+	box-shadow: none;
+	border: 0px;
+}
+
+#login-box .controls input:first-child {
+	border-top-left-radius: 2px;
+	border-top-right-radius: 2px;
+}
+
+#login-box .controls input:last-child {
+	border-bottom-left-radius: 2px;
+	border-bottom-right-radius: 2px;
+}
+
+#login-box button.btn-custom {
+	border-radius: 2px;
+	margin-top: 8px;
+	background: #5598d5;
+	border-color: #242f40;
+	color: white;
+	font-family: 'Calibri', sans-serif;
+}
+
+#login-box button.btn-custom:hover, #login-box button.btn-custom:focus {
+	-webkit-transition: all 500ms ease;
+	-moz-transition: all 500ms ease;
+	-ms-transition: all 500ms ease;
+	-o-transition: all 500ms ease;
+	transition: all 500ms ease;
+	background: #07393c;
+	box-shadow: none;
+}
+
+
+#logo {
+    height: 35vh;
+    width: 55vw;
+}
