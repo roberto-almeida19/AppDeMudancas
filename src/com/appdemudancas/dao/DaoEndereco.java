@@ -203,10 +203,10 @@ public class DaoEndereco implements IDaoEndereco {
 
 	
 	
-	// MUDANÇAS --------------------------------------------------------
+	// MUDANï¿½AS --------------------------------------------------------
 	
 	@Override
-	public void criarEnderecoMudança(Endereco enderecoMudanca) throws SQLException {
+	public void criarEnderecoMudanca(Endereco enderecoMudanca) throws SQLException {
 		Connection con = ConnectionManager.getInstance().getConnection();
 
 		String query = "INSERT INTO endereco(nome,cep,numero) "
@@ -225,7 +225,7 @@ public class DaoEndereco implements IDaoEndereco {
 	
 
 	@Override
-	public Endereco buscarEnderecoMudança(Endereco enderecoMudanca) throws SQLException {
+	public Endereco buscarEnderecoMudanca(Endereco enderecoMudanca) throws SQLException {
 		ResultSet resultado = gerarResultSetMudan(enderecoMudanca);
 
 		Endereco auxEnderecoCliente = new Endereco();
@@ -262,7 +262,7 @@ public class DaoEndereco implements IDaoEndereco {
 	
 
 	@Override
-	public void alterarEnderecoMudança(Endereco enderecoMudanca) throws SQLException {
+	public void alterarEnderecoMudanca(Endereco enderecoMudanca) throws SQLException {
 		Connection con = ConnectionManager.getInstance().getConnection();
 
 		String query = "UPDATE Endereco SET nome = ?, cep = ?, numero = ?"
@@ -285,7 +285,7 @@ public class DaoEndereco implements IDaoEndereco {
 	
 
 	@Override
-	public void removeEnderecoMudança(Endereco enderecoMudanca) throws SQLException {
+	public void removeEnderecoMudanca(Endereco enderecoMudanca) throws SQLException {
 
 		Connection con = ConnectionManager.getInstance().getConnection();
 

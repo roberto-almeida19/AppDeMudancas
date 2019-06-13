@@ -8,8 +8,15 @@ public class Carro {
 	private String marca;
 	private String modelo;
 	private String cor;
+	private String cpfMotorista;
 
 	
+	public String getCpfMotorista() {
+		return cpfMotorista;
+	}
+	public void setCpfMotorista(String cpfMotorista) {
+		this.cpfMotorista = cpfMotorista;
+	}
 	public String getPlaca() {
 		return placa;
 	}

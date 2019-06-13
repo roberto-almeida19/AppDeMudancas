@@ -8,6 +8,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.appdemudancas.model.Cliente;
 import com.appdemudancas.model.ItemMudanca;
 import com.appdemudancas.model.Motorista;
 import com.appdemudancas.model.Mudanca;
@@ -80,8 +81,13 @@ public class DaoMudanca implements IDaoMudanca {
 			auxMudanca.setData_criacao(new java.util.Date(resultado.getDate("data_criacao").getTime()));
 			auxMudanca.setData_mudanca(new java.util.Date(resultado.getDate("data_mudanca").getTime()));
 			auxMudanca.setStatus(resultado.getString("status"));
-			auxMudanca.setMotorista(new Motorista().setCpf((resultado.getString("MotoristaCpf"))));
-			auxMudanca.setCliente(resultado.getString("ClienteCpf"));
+			Motorista motorista = new Motorista();
+			motorista.setCpf(resultado.getString("MotoristaCpf"));
+			auxMudanca.setMotorista(motorista);
+			Cliente cliente = new Cliente();
+			cliente.setCpf(resultado.getString("ClienteCpf"));
+			
+			auxMudanca.setCliente(cliente);
 
 			itemMudanca.setCodigo_mudanca(auxMudanca.getCodigo());
 			auxMudanca.setItens(new DaoItemMudanca().buscarItemMudanca(itemMudanca));

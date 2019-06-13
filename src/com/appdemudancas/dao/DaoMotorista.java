@@ -75,9 +75,10 @@ public class DaoMotorista implements IDaoMotorista {
 					new DaoEndereco().buscarEnderecoMotorista(auxMotorista.getEndereco()));
 
 			auxMotorista.setPontuacao(resultado.getDouble("pontuacao"));
-
-			auxCarro.setMotoristaCpf(auxMotorista.getCpf());
-			auxMudanca.setMotorista_cpf(auxMotorista.getCpf());
+			Motorista motorista = new Motorista();
+			motorista.setCpf(auxMotorista.getCpf());
+			auxCarro.setCpfMotorista(auxMotorista.getCpf());
+			auxMudanca.setMotorista(motorista);
 
 			auxMotorista.setCarros(new DaoCarro().buscarCarro(auxCarro));
 			auxMotorista.setMudanca(new DaoMudanca().buscarMudanca(auxMudanca));

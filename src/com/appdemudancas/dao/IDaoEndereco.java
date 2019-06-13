@@ -27,11 +27,11 @@ public interface IDaoEndereco {
 	
 	
 	
-	public void criarEnderecoMudança(Endereco enderecoMudanca) throws SQLException;
+	public void criarEnderecoMudanca(Endereco enderecoMudanca) throws SQLException;
 
-	public Endereco buscarEnderecoMudança(Endereco enderecoMudanca) throws SQLException;
+	public Endereco buscarEnderecoMudanca(Endereco enderecoMudanca) throws SQLException;
 	
-	public void alterarEnderecoMudança(Endereco enderecoMudanca) throws SQLException;
+	public void alterarEnderecoMudanca(Endereco enderecoMudanca) throws SQLException;
 	
-	public void removeEnderecoMudança(Endereco enderecoMudanca) throws SQLException;
+	public void removeEnderecoMudanca(Endereco enderecoMudanca) throws SQLException;
 }
