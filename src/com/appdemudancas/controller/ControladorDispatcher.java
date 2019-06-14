@@ -63,13 +63,12 @@ public class ControladorDispatcher {
 	}
 	
 	@ResponseBody
-	@RequestMapping(value = "listar/carros")
-	public Carro listarCarros() {
-		System.out.println("ALÔ TESTE 123!");
-		Carro carro = new Carro();
-		carro.setAnoFabricacao(2010);
-		carro.setCpfMotorista("277727272");
-		return carro;
+	@RequestMapping(value = "listar/clientes")
+	public Cliente listarCarros() {
+		Cliente cliente = new Cliente();
+		cliente.setNome("Roberto Almeida");
+		cliente.setCpf("47429468869");
+		return cliente;
 	}
 	
 	

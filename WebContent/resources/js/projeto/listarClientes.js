@@ -1,15 +1,45 @@
 $(document).ready(function() {
-	buscarClientes();
+	
+	let info = [];
+	info.push(buscarClientes());
+	montarDataTable(info)
 });
-
-	function buscarClientes() {
-	jQuery.ajax({
-		url : "listar/carros",
+	
+function buscarClientes() {
+	return jQuery.ajax({
+		url : "listar/clientes",
 		type : "GET",
-		dataType:'json',
 		async : false,
-		success : function(result) {
-			console.log(result);
-		}
-	});
+	}).responseJSON;
 }
+function montarDataTable(info) {
+		$('#lista-clientes').DataTable({
+		 	'paging':true,
+			'data':info,
+			'lengthMenu': [[10, 25, 50, -1], [10, 25, 50, "All"]],
+			"pageLength": 20,
+			
+			'language': {
+	    		"sProcessing":   "A processar...",
+	    		"sLengthMenu":   "Mostrar _MENU_ registros",
+	    		"sZeroRecords":  "Não foram encontrados resultados",
+	    		"sInfo":         "Mostrando de _START_ até _END_ de _TOTAL_ registros",
+	    		"sInfoEmpty":    "Mostrando de 0 até 0 de 0 registros",
+	    		"sInfoFiltered": "(filtrado de _MAX_ registros no total)",
+	    		"sInfoPostFix":  "",
+	    		"sSearch":       "Procurar:",
+	    		"sUrl":          "",
+	    		"oPaginate": {
+	    		    "sFirst":    "Primeiro",
+	    		    "sPrevious": "Anterior",
+	    		    "sNext":     "Seguinte",
+	    		    "sLast":     "Último"
+	    		},
+			},
+	    	
+		 
+		 "data":info,
+		 'columns':[{'data':'nome'},{'data':'cpf'}]
+		});
+	}
+

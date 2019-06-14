@@ -1,0 +1,14 @@
+.cabecalho-listas{
+	padding : 10px;
+	background-color: orange;
+	border-radius: 15px;
+	margin-top : 2em;
+}
+body {
+	background: aqua;
+}
+
+#conteudo{
+	background: white;
+	padding:5em;
+}

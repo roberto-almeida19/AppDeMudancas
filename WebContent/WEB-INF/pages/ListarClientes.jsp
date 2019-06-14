@@ -7,40 +7,40 @@
 <!DOCTYPE html>
 <html>
 	<head>
+		<link href="<c:url value="/resources/css/util/datatables.min.css"/>" rel="stylesheet">
+		<link href="<c:url value="/resources/css/util/dataTables.bootstrap4.min.css"/>" rel="stylesheet">
+		<link href="<c:url value="/resources/css/util/buttons.dataTables.min.css"/>" rel="stylesheet">
+		<link href='<c:url value="/resources/css/util/bootstrap.min.css"></c:url>' rel="stylesheet">
+		<link href="<c:url value="/resources/css/util/font-awesome.min.css"/>"rel="stylesheet">
+		<link href="<c:url value="/resources/css/util/sweetalert2.css"/>" rel="stylesheet">
+		<link href="<c:url value="/resources/css/projeto/lista.css"/>" rel="stylesheet">
 		<meta charset="UTF-8">
 		<title>Listar Clientes</title>
 	</head>
 	<body>
-	
-		<h1>Listar Clientes</h1>
-		
-		<table border="1">
-			<tr>
-				<th>CPF:</th>
-				<th>Nome:</th>
-				<th>Telefone:</th>
-				<th>Email:</th>
-				<th>Data de nascimento:</th>
-				<th>Endereço:</th>
-				<th>Ação:</th>
-			</tr>
-			
-			<c:forEach items="${clientes}" var="cliente">
-			
-				<tr>
-					<td>${cliente.cpf}</td>
-					<td>${cliente.nome}</td>
-					<td>${cliente.telefone}</td>
-					<td>${cliente.email}</td>
-					<td><fmt:formatDate value="${itemMotorista.data_nascimento}" pattern="MM/dd/yyyy" /></td>
-					<td>${cliente.enderecoCliente.nome}</td>
-					<td><a href="http://localhost:8080/AppDeMudancas/RemoverMotorista?cpf=${itemMotorista.cpf}">Remover</a></td>
-				</tr>
-			
-			</c:forEach>
-			
-		</table>
+		<div class="container-fluid" >
+			<div class="cabecalho-listas">
+				<div class="d-flex justify-content-center">
+					<p class="display-4">Listagem de Clientes</p>
+				</div>
+			</div>
+			<div id = "conteudo">
+				<div class="d-flex justify-content-center">
+					<table id="lista-clientes" class="display lista" style="width:100%">
+						<thead>
+							<tr>
+								<th>Nome</th>
+								<th>CPF</th>
+							</tr>
+						</thead>
+					</table>		
+				</div>
+			</div>
+		</div>	
 			<script src="<c:url value="/resources/js/util/jquery.min.js"/>"></script>
+			<script src="<c:url value="/resources/js/util/popper.min.js"/>"></script>
+			<script src="<c:url value="/resources/js/util/jquery.dataTables.min.js"/>"></script>
+			<script src="<c:url value="/resources/js/util/bootstrap.min.js"/>"></script>
 			<script src="<c:url value="/resources/js/projeto/listarClientes.js"/>"></script>
 	</body>
 </html>
