@@ -61,9 +61,11 @@ public class ControladorDispatcher {
 		
 		return "formularioMotorista";
 	}
+	
 	@ResponseBody
-	@RequestMapping(value = "/listar/carros", produces = MediaType.APPLICATION_JSON_VALUE)
+	@RequestMapping(value = "listar/carros")
 	public Carro listarCarros() {
+		System.out.println("ALÔ TESTE 123!");
 		Carro carro = new Carro();
 		carro.setAnoFabricacao(2010);
 		carro.setCpfMotorista("277727272");
