@@ -39,7 +39,13 @@ function montarDataTable(info) {
 	    	
 		 
 		 "data":info,
-		 'columns':[{'data':'nome'},{'data':'cpf'}]
+		 'columns':[{'data':'nome'},{'data':'cpf'}, 
+			 {'render': function(data,row,id) {
+			return `<span class='fa fa-pencil'></span>`}},
+			 {'render': function(data,row,id) {
+			return `<span class='fa fa-trash'></span>`}},
+					
+			]
 		});
 	}
 

@@ -31,6 +31,8 @@
 							<tr>
 								<th>Nome</th>
 								<th>CPF</th>
+								<th>Alterar</th>
+								<th>Deletar</th>
 							</tr>
 						</thead>
 					</table>		

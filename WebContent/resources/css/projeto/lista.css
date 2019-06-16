@@ -1,14 +1,19 @@
 .cabecalho-listas{
 	padding : 10px;
-	background-color: orange;
+	background-color: #cecece;
 	border-radius: 15px;
 	margin-top : 2em;
+	z-index: 5;
+	position: relative;
+	
 }
 body {
-	background: aqua;
+	background: #c6f8f0;
 }
 
 #conteudo{
 	background: white;
 	padding:5em;
+	z-index: -1;
+	margin-top:-20px;
 }

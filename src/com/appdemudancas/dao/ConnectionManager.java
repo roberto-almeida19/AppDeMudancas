@@ -20,9 +20,9 @@ public class ConnectionManager {
 			e.printStackTrace();
 		}
 		
-		databaseUrl = "jdbc:maridb://localhost:3306/appdemudancas";
+		databaseUrl = "jdbc:mysql://localhost:3306/appdemudancas";
 		user = "root";
-		password = "1234";
+		password = "2645090r";
 		
 	}
 	

@@ -1,0 +1,16 @@
+.conteudo {
+	background: rgba(255,255,255,0.85);
+	padding:5em;
+	z-index: -1;
+	margin-top:-20px;
+}
+
+body {
+	background: black;
+}
+.cabecalho-clientes{
+	background: orange;
+	z-index: 1;
+	border-radius: 10px;
+	position: relative;
+}

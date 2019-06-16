@@ -12,16 +12,16 @@ public class Main {
 
 	public static void main(String[] args) {
 		Cliente cliente = new Cliente();
-		cliente.setCpf("47429468802");
-		cliente.setNome("Roberto Almeida");
-		cliente.setEmail("ralmeida@gmail.com");
+		cliente.setCpf("14532095541");
+		cliente.setNome("Sthefani Cris");
+		cliente.setEmail("salmeida@gmail.com");
 		cliente.setData_nascimento(new Date());
 		cliente.setData_cadastro(new Date());
 		
 		Endereco endereco = new Endereco();
 		endereco.setNome("anisio de abreu");
 		endereco.setNumero(384);
-		endereco.setCodigo(1);
+		endereco.setCodigo(2);
 		cliente.setEndereco_cliente(endereco);
 		
 		try {

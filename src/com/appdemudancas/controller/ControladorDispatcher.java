@@ -25,7 +25,7 @@ public class ControladorDispatcher {
 		return "ListarClientes";
 	}
 	
-	@RequestMapping(value= {"/LoginMotorista"}, method=RequestMethod.GET)
+	@RequestMapping(value= {"/	"}, method=RequestMethod.GET)
 	public String loginMotorista(Model model) {	
 		
 		model.addAttribute("motorista", new Motorista());
