@@ -22,7 +22,7 @@ public class ConnectionManager {
 		
 		databaseUrl = "jdbc:mysql://localhost:3306/appdemudancas";
 		user = "root";
-		password = "2645090r";
+		password = "1234";
 		
 	}
 	

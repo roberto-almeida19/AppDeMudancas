@@ -27,10 +27,10 @@ public class DaoMotorista implements IDaoMotorista {
 		pstm.setString(1, motorista.getCpf());
 		pstm.setString(2, motorista.getNome());
 		pstm.setString(3, motorista.getTelefone());
-		pstm.setDate(4, new java.sql.Date(motorista.getData_nascimento().getTime()));
+		pstm.setDate(4, new java.sql.Date(motorista.getDataNascimento().getTime()));
 		pstm.setString(5, motorista.getEmail());
 		pstm.setString(6, motorista.getSenha());
-		pstm.setDate(7, new java.sql.Date(motorista.getData_cadastro().getTime()));
+		pstm.setDate(7, new java.sql.Date(motorista.getDataCadastro().getTime()));
 		pstm.setString(8, motorista.getCnh().getNumero());
 		pstm.setInt(9, motorista.getQuantidadeAjudantes());
 		pstm.setDouble(10, motorista.getPontuacao());
@@ -65,10 +65,10 @@ public class DaoMotorista implements IDaoMotorista {
 			auxMotorista.setCpf(resultado.getString("cpf"));
 			auxMotorista.setNome(resultado.getString("nome"));
 			auxMotorista.setTelefone(resultado.getString("telefone"));
-			auxMotorista.setData_nascimento(new java.util.Date(resultado.getDate("data_nascimento").getTime()));
+			auxMotorista.setDataNascimento(new java.util.Date(resultado.getDate("data_nascimento").getTime()));
 			auxMotorista.setEmail(resultado.getString("email"));
 			auxMotorista.setSenha(resultado.getString("senha"));
-			auxMotorista.setData_cadastro(new java.util.Date(resultado.getDate("data_cadastro").getTime()));
+			auxMotorista.setDataCadastro(new java.util.Date(resultado.getDate("data_cadastro").getTime()));
 			auxMotorista.setQuantidadeAjudantes(resultado.getInt("quantidade_ajudantes"));
 
 			auxMotorista.setEndereco(
@@ -102,9 +102,9 @@ public class DaoMotorista implements IDaoMotorista {
 		pstm.setString(1, motorista.getCpf());
 		pstm.setString(2, motorista.getNome());
 		pstm.setString(3, motorista.getTelefone());
-		pstm.setDate(4, new java.sql.Date(motorista.getData_nascimento().getTime()));
+		pstm.setDate(4, new java.sql.Date(motorista.getDataNascimento().getTime()));
 		pstm.setString(5, motorista.getEmail());
-		pstm.setDate(6, new java.sql.Date(motorista.getData_cadastro().getTime()));
+		pstm.setDate(6, new java.sql.Date(motorista.getDataCadastro().getTime()));
 		pstm.setString(7, motorista.getCnh().getNumero());
 		pstm.setInt(8, motorista.getQuantidadeAjudantes());
 		pstm.setDouble(9, motorista.getPontuacao());
@@ -134,8 +134,8 @@ public class DaoMotorista implements IDaoMotorista {
 			pstm.setString(5, motorista.getCpf());
 			pstm.setString(6, motorista.getEmail());
 			pstm.setString(7, motorista.getSenha());
-			pstm.setDate(8, (Date) motorista.getData_nascimento());
-			pstm.setDate(9, (Date) motorista.getData_cadastro());
+			pstm.setDate(8, (Date) motorista.getDataNascimento());
+			pstm.setDate(9, (Date) motorista.getDataCadastro());
 			pstm.setInt(10, motorista.getEndereco().getCodigo()); // mudar para tipo de endereco
 			pstm.executeUpdate();
 			pstm.close();

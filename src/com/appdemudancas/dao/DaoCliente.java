@@ -24,10 +24,10 @@ public class DaoCliente implements IDaoCliente {
 		pstm.setString(1, cliente.getCpf());
 		pstm.setString(2, cliente.getNome());
 		pstm.setString(3, cliente.getTelefone());
-		pstm.setDate(4, new java.sql.Date(cliente.getData_nascimento().getTime()));
+		pstm.setDate(4, new java.sql.Date(cliente.getDataNascimento().getTime()));
 		pstm.setString(5, cliente.getEmail());
 		pstm.setString(6, cliente.getSenha());
-		pstm.setDate(7, new java.sql.Date(cliente.getData_cadastro().getTime()));
+		pstm.setDate(7, new java.sql.Date(cliente.getDataCadastro().getTime()));
 		pstm.setInt(8, cliente.getEndereco().getCodigo());
 
 		pstm.executeUpdate();
@@ -60,13 +60,13 @@ public class DaoCliente implements IDaoCliente {
 
 			auxCliente.setTelefone(resultado.getString("telefone"));
 
-			auxCliente.setData_nascimento(new java.util.Date(resultado.getDate("data_nascimento").getTime()));
+			auxCliente.setDataNascimento(new java.util.Date(resultado.getDate("data_nascimento").getTime()));
 
 			auxCliente.setEmail(resultado.getString("email"));
 
 			auxCliente.setSenha(resultado.getString("senha"));
 
-			auxCliente.setData_cadastro(new java.util.Date(resultado.getDate("data_cadastro").getTime()));
+			auxCliente.setDataCadastro(new java.util.Date(resultado.getDate("data_cadastro").getTime()));
 
 			auxCliente.getEndereco().setCodigo(resultado.getInt("endereco_clienteCodigo_endereco"));
 			// TODO Refazer o model
@@ -91,9 +91,9 @@ public class DaoCliente implements IDaoCliente {
 		pstm.setString(1, cliente.getCpf());
 		pstm.setString(2, cliente.getNome());
 		pstm.setString(3, cliente.getTelefone());
-		pstm.setDate(4, new java.sql.Date(cliente.getData_nascimento().getTime()));
+		pstm.setDate(4, new java.sql.Date(cliente.getDataNascimento().getTime()));
 		pstm.setString(5, cliente.getEmail());
-		pstm.setDate(6, new java.sql.Date(cliente.getData_cadastro().getTime()));
+		pstm.setDate(6, new java.sql.Date(cliente.getDataCadastro().getTime()));
 		pstm.setInt(7, cliente.getEndereco().getCodigo());
 
 		ResultSet resultado = pstm.executeQuery();
@@ -113,7 +113,7 @@ public class DaoCliente implements IDaoCliente {
 		pstm.setString(1, cliente.getCpf());
 		pstm.setString(2, cliente.getNome());
 		pstm.setString(3, cliente.getTelefone());
-		pstm.setDate(4, (Date) cliente.getData_nascimento());
+		pstm.setDate(4, (Date) cliente.getDataNascimento());
 		pstm.setString(5, cliente.getEmail());
 		pstm.setString(6, cliente.getSenha());
 	}

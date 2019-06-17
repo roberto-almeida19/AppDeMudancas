@@ -11,30 +11,33 @@ import com.appdemudancas.model.Endereco;
 public class Main {
 
 	public static void main(String[] args) {
+		
 		Cliente cliente = new Cliente();
-		cliente.setCpf("14532095541");
-		cliente.setNome("Sthefani Cris");
-		cliente.setEmail("salmeida@gmail.com");
-		cliente.setData_nascimento(new Date());
-		cliente.setData_cadastro(new Date());
+		cliente.setCpf("12398876543");
+		cliente.setNome("gdsds");
+		cliente.setTelefone("675634");
+		cliente.setEmail("vikjyhgg@gmail.com");
+		cliente.setSenha("1234");
+		cliente.setDataCadastro(new Date());
+		cliente.setDataNascimento(new Date());
+	
 		
 		Endereco endereco = new Endereco();
-		endereco.setNome("anisio de abreu");
-		endereco.setNumero(384);
-		endereco.setCodigo(2);
-		cliente.setEndereco_cliente(endereco);
+		endereco.setNome("av aguia de haia");
+		endereco.setNumero(6000);
+		endereco.setCodigo(23);
+		cliente.setEnderecoCliente(endereco);
 		
 		try {
 			new DaoEndereco().criarEnderecoCliente(endereco);
 			new DaoCliente().criarCliente(cliente);
+			System.out.println("operacao realizada");
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
-		
-		
-		
 	}
-
+	
+	
 }

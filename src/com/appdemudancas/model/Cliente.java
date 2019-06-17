@@ -45,22 +45,22 @@ public class Cliente {
 	public void setSenha(String senha) {
 		this.senha = senha;
 	}
-	public Date getData_nascimento() {
+	public Date getDataNascimento() {
 		return dataNascimento;
 	}
-	public void setData_nascimento(Date data_nascimento) {
+	public void setDataNascimento(Date data_nascimento) {
 		this.dataNascimento = data_nascimento;
 	}
-	public Date getData_cadastro() {
+	public Date getDataCadastro() {
 		return dataCadastro;
 	}
-	public void setData_cadastro(Date data_cadastro) {
+	public void setDataCadastro(Date data_cadastro) {
 		this.dataCadastro = data_cadastro;
 	}
 	public Endereco getEndereco() {
 		return endereco;
 	}
-	public void setEndereco_cliente(Endereco endereco) {
+	public void setEnderecoCliente(Endereco endereco) {
 		this.endereco = endereco;
 	}
 	public List<Mudanca> getMudanca() {

@@ -39,28 +39,28 @@ public class Mudanca {
 	public void setStatus(String status) {
 		this.status = status;
 	}
-	public Date getData_criacao() {
+	public Date getDataCriacao() {
 		return dataCriacao;
 	}
-	public void setData_criacao(Date data_criacao) {
+	public void setDataCriacao(Date data_criacao) {
 		this.dataCriacao = data_criacao;
 	}
-	public Date getData_mudanca() {
+	public Date getDataMudanca() {
 		return dataMudanca;
 	}
-	public void setData_mudanca(Date data_mudanca) {
+	public void setDataMudanca(Date data_mudanca) {
 		this.dataMudanca = data_mudanca;
 	}
-	public String getEndereco_inicial() {
+	public String getEnderecoInicial() {
 		return enderecoInicial;
 	}
-	public void setEndereco_inicial(String endereco_inicial) {
+	public void setEnderecoInicial(String endereco_inicial) {
 		this.enderecoInicial = endereco_inicial;
 	}
-	public String getEndereco_final() {
+	public String getEnderecoFinal() {
 		return enderecoFinal;
 	}
-	public void setEndereco_final(String endereco_final) {
+	public void setEnderecoFinal(String endereco_final) {
 		this.enderecoFinal = endereco_final;
 	}
 	public List<ItemMudanca> getItens() {

@@ -79,9 +79,10 @@ public class DaoEndereco implements IDaoEndereco {
 
 		try {
 			PreparedStatement pstm = con.prepareStatement(query);
-			pstm.setString(1, enderecoCliente.getNome());
-			pstm.setString(2, enderecoCliente.getCep());
-			pstm.setInt(3, enderecoCliente.getNumero());
+			pstm.setInt(1, enderecoCliente.getCodigo());
+			pstm.setString(2, enderecoCliente.getNome());
+			pstm.setString(3, enderecoCliente.getCep());
+			pstm.setInt(4, enderecoCliente.getNumero());
 
 			pstm.executeUpdate();
 			pstm.close();

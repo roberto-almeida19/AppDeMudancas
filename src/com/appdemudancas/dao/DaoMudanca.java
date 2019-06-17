@@ -24,8 +24,8 @@ public class DaoMudanca implements IDaoMudanca {
 				+ "VALUES(?,?,?,?,?);";
 
 		PreparedStatement pstm = con.prepareStatement(query);
-		pstm.setDate(1, new java.sql.Date(mudanca.getData_criacao().getTime()));
-		pstm.setDate(2, new java.sql.Date(mudanca.getData_mudanca().getTime()));
+		pstm.setDate(1, new java.sql.Date(mudanca.getDataCriacao().getTime()));
+		pstm.setDate(2, new java.sql.Date(mudanca.getDataMudanca().getTime()));
 		pstm.setString(3, mudanca.getStatus());
 		pstm.setString(4, mudanca.getMotorista().getCpf());
 		pstm.setString(5, mudanca.getCliente().getCpf());
@@ -55,8 +55,8 @@ public class DaoMudanca implements IDaoMudanca {
 				+ "mudanca.codigo_mudanca=?;";
 
 		PreparedStatement pstm = con.prepareStatement(query);
-		pstm.setDate(1, new java.sql.Date(mudanca.getData_criacao().getTime()));
-		pstm.setDate(2, new java.sql.Date(mudanca.getData_mudanca().getTime()));
+		pstm.setDate(1, new java.sql.Date(mudanca.getDataCriacao().getTime()));
+		pstm.setDate(2, new java.sql.Date(mudanca.getDataMudanca().getTime()));
 		pstm.setString(3, mudanca.getStatus());
 		pstm.setString(4, mudanca.getMotorista().getCpf());
 		pstm.setString(5, mudanca.getCliente().getCpf());
@@ -78,8 +78,8 @@ public class DaoMudanca implements IDaoMudanca {
 			ItemMudanca itemMudanca = new ItemMudanca();
 
 			auxMudanca.setCodigo(resultado.getInt("codigo_mudanca"));
-			auxMudanca.setData_criacao(new java.util.Date(resultado.getDate("data_criacao").getTime()));
-			auxMudanca.setData_mudanca(new java.util.Date(resultado.getDate("data_mudanca").getTime()));
+			auxMudanca.setDataCriacao(new java.util.Date(resultado.getDate("data_criacao").getTime()));
+			auxMudanca.setDataMudanca(new java.util.Date(resultado.getDate("data_mudanca").getTime()));
 			auxMudanca.setStatus(resultado.getString("status"));
 			Motorista motorista = new Motorista();
 			motorista.setCpf(resultado.getString("MotoristaCpf"));
@@ -109,11 +109,11 @@ public class DaoMudanca implements IDaoMudanca {
 		
 		try {
 			PreparedStatement pstm = con.prepareStatement(query);
-			pstm.setDate(1, (Date) mudanca.getData_criacao());
-			pstm.setDate(2, (Date)mudanca.getData_mudanca());
+			pstm.setDate(1, (Date) mudanca.getDataCriacao());
+			pstm.setDate(2, (Date)mudanca.getDataMudanca());
 			pstm.setString(3, mudanca.getStatus());
-			pstm.setString(4, mudanca.getEndereco_inicial());
-			pstm.setString(5, mudanca.getEndereco_final());
+			pstm.setString(4, mudanca.getEnderecoInicial());
+			pstm.setString(5, mudanca.getEnderecoFinal());
 			
 			pstm.executeUpdate();
 			pstm.close();

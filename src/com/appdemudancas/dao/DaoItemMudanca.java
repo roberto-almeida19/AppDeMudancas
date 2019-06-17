@@ -27,7 +27,7 @@ public class DaoItemMudanca implements IDaoItemMudanca {
 		pstm.setDouble(4, itemMudanca.getLargura());
 		pstm.setDouble(5, itemMudanca.getComprimento());
 		pstm.setDouble(6, itemMudanca.getPeso());
-		pstm.setString(7, itemMudanca.isE_fragil() ? "s" : "n");
+		pstm.setString(7, itemMudanca.isEFragil() ? "s" : "n");
 		pstm.setInt(7, itemMudanca.getCodigoMudanca());
 
 		pstm.executeUpdate();
@@ -58,7 +58,7 @@ public class DaoItemMudanca implements IDaoItemMudanca {
 			auxItemMudanca.setLargura(resultado.getDouble("largura"));
 			auxItemMudanca.setComprimento(resultado.getDouble("comprimento"));
 			auxItemMudanca.setPeso(resultado.getDouble("peso"));
-			auxItemMudanca.setE_fragil("s".equals(resultado.getString("altura")) ? true : false);
+			auxItemMudanca.setEFragil("s".equals(resultado.getString("altura")) ? true : false);
 			auxItemMudanca.setCodigo_mudanca(resultado.getInt("MudancaCodigo_mudanca"));
 
 			listaResultados.add(auxItemMudanca);
@@ -81,7 +81,7 @@ public class DaoItemMudanca implements IDaoItemMudanca {
 		pstm.setDouble(3, itemMudanca.getLargura());
 		pstm.setDouble(4, itemMudanca.getComprimento());
 		pstm.setDouble(5, itemMudanca.getPeso());
-		pstm.setString(6, itemMudanca.isE_fragil() ? "s" : "n");
+		pstm.setString(6, itemMudanca.isEFragil() ? "s" : "n");
 		pstm.setInt(7, itemMudanca.getCodigoMudanca());
 		pstm.setInt(8, itemMudanca.getCodigo());
 
@@ -107,7 +107,7 @@ public class DaoItemMudanca implements IDaoItemMudanca {
 			pstm.setDouble(3, itemMudanca.getLargura());
 			pstm.setDouble(4, itemMudanca.getComprimento());
 			pstm.setDouble(5, itemMudanca.getPeso());
-			pstm.setBoolean(6, itemMudanca.isE_fragil());
+			pstm.setBoolean(6, itemMudanca.isEFragil());
 			
 			pstm.executeUpdate();
 			pstm.close();

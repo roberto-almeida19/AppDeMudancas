@@ -47,7 +47,7 @@ public class ControladorDispatcher {
 			@ModelAttribute("motorista") Motorista motorista,
 			Model model) {
 		
-		motorista.setData_cadastro(new Date());
+		motorista.setDataCadastro(new Date());
 		
 		//CtrEnderecoMotorista ctrEnderecoMotorista = new CtrEnderecoMotorista();
 		CtrCnh ctrCnh = new CtrCnh();

@@ -50,10 +50,10 @@ public class ItemMudanca {
 	public void setPeso(double peso) {
 		this.peso = peso;
 	}
-	public boolean isE_fragil() {
+	public boolean isEFragil() {
 		return eFragil;
 	}
-	public void setE_fragil(boolean e_fragil) {
+	public void setEFragil(boolean e_fragil) {
 		this.eFragil = e_fragil;
 	}
 	public String getNome() {
