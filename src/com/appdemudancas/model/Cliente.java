@@ -69,6 +69,12 @@ public class Cliente {
 	public void setMudanca(List<Mudanca> mudanca) {
 		this.mudanca = mudanca;
 	}
+	@Override
+	public String toString() {
+		return "Cliente [nome=" + nome + ", telefone=" + telefone + ", cpf=" + cpf + ", email=" + email + ", senha="
+				+ senha + ", dataNascimento=" + dataNascimento + ", dataCadastro=" + dataCadastro + ", endereco="
+				+ endereco + ", mudanca=" + mudanca + "]";
+	}
 	
 	
 	

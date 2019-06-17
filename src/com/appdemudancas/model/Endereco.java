@@ -32,5 +32,9 @@ public class Endereco {
 	public void setNumero(int numero) {
 		this.numero = numero;
 	}
+	@Override
+	public String toString() {
+		return "Endereco [codigo=" + codigo + ", nome=" + nome + ", cep=" + cep + ", numero=" + numero + "]";
+	}
 	
 }

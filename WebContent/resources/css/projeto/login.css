@@ -1,0 +1,35 @@
+.alinhamento-central {
+	height: 400px;
+	justify-content: center;
+	align-items: center;
+}
+.alinhamento-central .item {
+	flex: content;
+	padding: 10px;
+}
+
+.login-box {
+	position: absolute;
+	top: 25vh;
+	left: 50%;
+	transform: translateX(-50%);
+	width: auto;
+	margin: 0 auto;
+	border: 1px solid #07393c;
+	border-radius:10px;
+	background: rgba(87, 194, 247, 0.7);
+	min-height: 150px;
+	padding: 30px;
+	z-index: 10;
+	padding-right: 0px;
+}
+body{
+	background-image: url("../../imgs/back-login.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	z-index:-11;
+		
+}
+#plano-fundo{
+
+	}

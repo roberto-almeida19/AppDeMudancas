@@ -22,11 +22,10 @@
 					<p class="display-4">Cadastro de Clientes</p>
 				</div>
 			</div>			<div class="conteudo">
-				<form action="cadastrarCliente" method="post">
 					<div class="row">
 						<div class="col">
 							Nome:
-							<input type="text" name="nome" class="form-control">
+							<input type="text" name="nome" class="form-control" id='nome'>
 						</div>
 					
 						
@@ -34,36 +33,29 @@
 					<div class="row">
 						<div class="col-4">
 							CPF:
-							<input type="text" name="cpf" class="form-control"/>
+							<input type="text" name="cpf" class="form-control" id='cpf'/>
 						</div>
 						<div class="col-4">
 							Telefone:
-							<input type="text" name="telefone" class="form-control"/>
+							<input type="text" name="telefone" class="form-control" id='telefone'/>
 						</div>
 					
 					
 						<div class="col-3">
 							Data de nascimento:
-							<input type="text" name="data_nascimento" class="form-control"/>
+							<input type="text" name="data_nascimento" class="form-control" id='data-nasc'/>
 						</div>
 					</div>
 					<div class="row">
 						<div class="col">
 							Logradouro:
-							<input type="text" name="endereco_cliente.nome" class="form-control"/>
+							<input type="text" name="endereco_cliente.nome" class="form-control" id='logradouro'>
 						</div>
 						
 						<div class="col-3">
 							Número:
-							<input type="text" name="endereco_cliente.numero" class="form-control"/>
+							<input type="text" name="endereco_cliente.numero" class="form-control" id='numero'>
 						</div>
-					</div>
-					<div class="row">
-						<div class="col">
-							Cidade:
-							<input type="text" name="cidade" class="form-control"/>
-						</div>
-						
 						<div class="col-3">
 							CEP:
 							<input type="text" name="endereco_cliente.cep"class="form-control"/>
@@ -71,12 +63,12 @@
 					</div>
 					<div>
 						Email:
-						<input type="text" name="email" class="form-control"/>
+						<input type="text" name="email" class="form-control" id='email'/>
 					</div>
 					
 					<div>
 						Senha:
-						<input type="text" name="senha" class="form-control"/>
+						<input type="text" name="senha" class="form-control" id='senha'/>
 					</div>
 					
 					<div>
@@ -84,14 +76,15 @@
 						<input type="text" name="confirmarSenha" class="form-control"/>
 					</div>
 						<div class="d-flex justify-content-center mt-5">
-							<input type="submit" value="Enviar" class="btn btn-success btn-lg btn-block"/>
+							<button id ="cadastrarCliente" class="btn btn-success btn-lg btn-block">Cadastrar</button>
 						</div>
-				</form>		
 			</div>
 		</div>
+		
 		<script src="<c:url value="/resources/js/util/jquery.min.js"/>"></script>
 		<script src="<c:url value="/resources/js/util/popper.min.js"/>"></script>
 		<script src="<c:url value="/resources/js/util/jquery.dataTables.min.js"/>"></script>
-		<script src="<c:url value="/resources/js/util/bootstrap.min.js"/>"></script>		
+		<script src="<c:url value="/resources/js/util/bootstrap.min.js"/>"></script>
+		<script src="<c:url value="/resources/js/projeto/cadastroCliente.js"/>"></script>		
 	</body>
 </html>

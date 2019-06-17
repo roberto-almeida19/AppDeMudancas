@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.appdemudancas.model.Carro;
 import com.appdemudancas.model.Cliente;
+import com.appdemudancas.model.Endereco;
 import com.appdemudancas.model.Motorista;
 import com.appdemudancas.model.Mudanca;
 
@@ -22,15 +23,15 @@ public class ControladorDispatcher {
 	public String index(Model model) {	
 		
 				
-		return "ListarClientes";
+		return "Login";
 	}
 	
-	@RequestMapping(value= {"/	"}, method=RequestMethod.GET)
+	@RequestMapping(value= {"/login"}, method=RequestMethod.GET)
 	public String loginMotorista(Model model) {	
 		
 		model.addAttribute("motorista", new Motorista());
 				
-		return "LoginMotorista";
+		return "index";
 	}
 	
 	//motorista
@@ -98,15 +99,9 @@ public class ControladorDispatcher {
 	}
 	
 	@RequestMapping(value= "cadastrarCliente", method=RequestMethod.POST)
-	public String receberCadastroCliente( Cliente cliente,
-			Model model) {
-		
-		CtrCliente ctrCliente = new CtrCliente();
-		
-		ctrCliente.cadastrarCliente(cliente);
-		
-		model.addAttribute("msg","Cadastro realizado");
-		
+	public String receberCadastroCliente( Cliente cliente,	Endereco endereco) {
+		cliente.setEnderecoCliente(endereco);
+		System.out.println(cliente.toString());
 		return "CadastroCliente";
 	}
 	
