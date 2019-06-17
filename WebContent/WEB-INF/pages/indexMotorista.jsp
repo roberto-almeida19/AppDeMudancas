@@ -11,6 +11,39 @@
 <link rel="stylesheet" href='<c:url value="/resources/css/projeto/indexMotorista.css"></c:url>'>
 </head>
 <body>
+<div class="modal" tabindex="-1" role="dialog" id='modal-mudanca'>
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title"></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+      
+      
+      
+      
+      
+      
+      
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
 <div class="wrapper">
 	<div class="sidebar" data-color="blue" data-background-color="white" data-image='<c:url value="/resources/assets/img/new_logo.png"></c:url>'>
 		<div class="logo">
@@ -21,13 +54,13 @@
 		<div class="sidebar-wrapper">
 			<ul class="nav">
 				<li class="nav-item">
-					<a data-toggle="tooltip" data-placement="right" title="Alterar Cadastro" href=""> <i class="fa fa-exchange"></i> <p>Alterar Cadastro</p></a>
+					<i class="fa fa-exchange"></i> <p>Alterar Cadastro</p></a>
 				</li>
 				<li class="nav-item">
-					<a data-toggle="tooltip" data-placement="right" title="Alterar Cadastro" href=""> <i class="fa fa-exchange"></i> <p>Alterar/Incluir Carro</p></a>
+					<i class="fa fa-exchange"></i><p>Alterar/Incluir Carro</p>
 				</li>
 				<li class="nav-item">
-					<a data-toggle="tooltip" data-placement="right" title="Alterar Cadastro" href=""> <i class="fa fa-exchange"></i> <p>Alterar/Incluir Ajudantes</p></a>
+				 	<i class="fa fa-exchange"></i> <p>Alterar/Incluir Ajudantes</p>
 				</li>
 			</ul>
 		</div>
@@ -60,7 +93,7 @@
 			</div>
 		</nav>
 		<div class="content" style="height: 100vh !important">		
-			<div class="card">
+			<div class="card proposta-mudanca">
 				<div class="card-image">
 					<img class="rounded mx-auto d-block" src='<c:url value="/resources/assets/img/card-3.jpg"></c:url>'>
 				</div>
@@ -88,5 +121,6 @@
 <script src='<c:url value="/resources/js/util/bootstrap.min.js"></c:url>' type="text/javascript"></script>
 <script src='<c:url value="/resources/assets/js/core/bootstrap-material-design.min.js"></c:url>' type="text/javascript"></script>
 <script src='<c:url value="/resources/assets/js/plugins/perfect-scrollbar.jquery.min.js"></c:url>' type="text/javascript"></script>
+<script src='<c:url value="/resources/js/projeto/indexMotorista.js"></c:url>' type="text/javascript"></script>
 </body>
 </html>

@@ -5,3 +5,7 @@
 .card-content > div > p{
 	margin-left: 2vw;
 }
+
+.nav-item{
+	padding: 0px 10px 10px 15px;
+}
