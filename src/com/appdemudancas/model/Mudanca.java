@@ -8,10 +8,10 @@ public class Mudanca {
 	private int codigo;
 	private Cliente cliente;
 	private String status;
-	private Date data_criacao;
-	private Date data_mudanca;
-	private String endereco_inicial;
-	private String endereco_final;
+	private Date dataCriacao;
+	private Date dataMudanca;
+	private String enderecoInicial;
+	private String enderecoFinal;
 	private List<ItemMudanca> itens;
 	private Motorista motorista;
 	
@@ -40,28 +40,28 @@ public class Mudanca {
 		this.status = status;
 	}
 	public Date getData_criacao() {
-		return data_criacao;
+		return dataCriacao;
 	}
 	public void setData_criacao(Date data_criacao) {
-		this.data_criacao = data_criacao;
+		this.dataCriacao = data_criacao;
 	}
 	public Date getData_mudanca() {
-		return data_mudanca;
+		return dataMudanca;
 	}
 	public void setData_mudanca(Date data_mudanca) {
-		this.data_mudanca = data_mudanca;
+		this.dataMudanca = data_mudanca;
 	}
 	public String getEndereco_inicial() {
-		return endereco_inicial;
+		return enderecoInicial;
 	}
 	public void setEndereco_inicial(String endereco_inicial) {
-		this.endereco_inicial = endereco_inicial;
+		this.enderecoInicial = endereco_inicial;
 	}
 	public String getEndereco_final() {
-		return endereco_final;
+		return enderecoFinal;
 	}
 	public void setEndereco_final(String endereco_final) {
-		this.endereco_final = endereco_final;
+		this.enderecoFinal = endereco_final;
 	}
 	public List<ItemMudanca> getItens() {
 		return itens;

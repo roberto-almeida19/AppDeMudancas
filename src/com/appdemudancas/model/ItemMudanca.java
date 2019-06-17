@@ -8,7 +8,7 @@ public class ItemMudanca {
 	private double largura;
 	private double comprimento;
 	private double peso;
-	private boolean e_fragil;
+	private boolean eFragil;
 	private int codigoMudanca;
 	
 	public int getCodigoMudanca() {
@@ -51,10 +51,10 @@ public class ItemMudanca {
 		this.peso = peso;
 	}
 	public boolean isE_fragil() {
-		return e_fragil;
+		return eFragil;
 	}
 	public void setE_fragil(boolean e_fragil) {
-		this.e_fragil = e_fragil;
+		this.eFragil = e_fragil;
 	}
 	public String getNome() {
 		return nome;
@@ -62,7 +62,5 @@ public class ItemMudanca {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-	
-	
 
 }

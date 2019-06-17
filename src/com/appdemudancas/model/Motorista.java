@@ -12,8 +12,8 @@ public class Motorista {
 	private String senha;
 	private int quantidadeAjudantes;
 	private double pontuacao;
-	private Date data_nascimento;
-	private Date data_cadastro;
+	private Date dataNascimento;
+	private Date dataCadastro;
 	private List<Carro> carros;
 	private List<Mudanca> mudanca;
 	private Endereco endereco;
@@ -74,16 +74,16 @@ public class Motorista {
 		this.senha = senha;
 	}
 	public Date getData_nascimento() {
-		return data_nascimento;
+		return dataNascimento;
 	}
 	public void setData_nascimento(Date data_nascimento) {
-		this.data_nascimento = data_nascimento;
+		this.dataNascimento = data_nascimento;
 	}
 	public Date getData_cadastro() {
-		return data_cadastro;
+		return dataCadastro;
 	}
 	public void setData_cadastro(Date data_cadastro) {
-		this.data_cadastro = data_cadastro;
+		this.dataCadastro = data_cadastro;
 	}
 	public List<Carro> getCarros() {
 		return carros;

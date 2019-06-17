@@ -10,8 +10,8 @@ public class Cliente {
 	private String cpf;
 	private String email;
 	private String senha;
-	private Date data_nascimento;
-	private Date data_cadastro;
+	private Date dataNascimento;
+	private Date dataCadastro;
 	private Endereco endereco;
 	private List<Mudanca> mudanca;
 	
@@ -46,16 +46,16 @@ public class Cliente {
 		this.senha = senha;
 	}
 	public Date getData_nascimento() {
-		return data_nascimento;
+		return dataNascimento;
 	}
 	public void setData_nascimento(Date data_nascimento) {
-		this.data_nascimento = data_nascimento;
+		this.dataNascimento = data_nascimento;
 	}
 	public Date getData_cadastro() {
-		return data_cadastro;
+		return dataCadastro;
 	}
 	public void setData_cadastro(Date data_cadastro) {
-		this.data_cadastro = data_cadastro;
+		this.dataCadastro = data_cadastro;
 	}
 	public Endereco getEndereco() {
 		return endereco;

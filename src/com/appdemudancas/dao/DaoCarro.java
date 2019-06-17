@@ -15,16 +15,15 @@ public class DaoCarro implements IDaoCarro {
 	public void criarCarro(Carro carro) throws SQLException {
 		Connection con = ConnectionManager.getInstance().getConnection();
 		
-		String query = "INSERT INTO carro(placa, marca, modelo, chassi, cor, ano_fabricacao"
+		String query = "INSERT INTO carro(placa, marca, modelo, cor, ano_fabricacao"
 				+ "VALUES(?,?,?,?,?);";
 		
 		PreparedStatement pstm = con.prepareStatement(query);
 		pstm.setString(1, carro.getPlaca());
 		pstm.setString(2, carro.getMarca());
 		pstm.setString(3, carro.getModelo());
-		pstm.setString(4, carro.getChassi());
-		pstm.setString(5, carro.getCor());
-		pstm.setInt(6, carro.getAnoFabricacao());
+		pstm.setString(4, carro.getCor());
+		pstm.setInt(5, carro.getAnoFabricacao());
 		pstm.executeUpdate();
 		con.close();
 	}
@@ -49,7 +48,6 @@ public class DaoCarro implements IDaoCarro {
 			aux.setMarca(resultado.getString("marca"));
 			aux.setModelo(resultado.getString("modelo"));
 			aux.setCor(resultado.getString("cor"));
-			aux.setChassi(resultado.getString("chassi"));
 			aux.setAnoFabricacao(resultado.getInt("ano_fabricacao"));
 			listaResultados.add(aux);
 		
@@ -61,7 +59,6 @@ public class DaoCarro implements IDaoCarro {
 		Connection con = ConnectionManager.getInstance().getConnection();
 		
 		String query = "SELECT * FROM carro WHERE "
-				+ "carro.chassi=? OR "
 				+ "carro.placa=? OR "
 				+ "carro.ano_fabricacao=? OR "
 				+ "carro.marca=? OR "
@@ -72,7 +69,6 @@ public class DaoCarro implements IDaoCarro {
 		pstm.setString(1, carro.getPlaca());
 		pstm.setString(2, carro.getMarca());
 		pstm.setString(3, carro.getModelo());
-		pstm.setString(4, carro.getChassi());
 		pstm.setString(5, carro.getCor());
 		pstm.setInt(6, carro.getAnoFabricacao());
 		
@@ -86,7 +82,7 @@ public class DaoCarro implements IDaoCarro {
 	public void alterarCarro(Carro carro) throws SQLException {
 		Connection con = ConnectionManager.getInstance().getConnection();
 		
-		String query = "UPDATE Carro SET placa = ?, marca= ?, modelo=?, chassi=?,"
+		String query = "UPDATE Carro SET placa = ?, marca= ?, modelo=?,"
 				+ "cor=?, ano_fabricacao = ? WHERE placa = ?;";
 		
 		PreparedStatement pstm = con.prepareStatement(query);
@@ -94,7 +90,6 @@ public class DaoCarro implements IDaoCarro {
 		pstm.setString(1, carro.getPlaca());
 		pstm.setString(2, carro.getMarca());
 		pstm.setString(3, carro.getModelo());
-		pstm.setString(4, carro.getChassi());
 		pstm.setString(5, carro.getCor());
 		pstm.setInt(6, carro.getAnoFabricacao());
 		

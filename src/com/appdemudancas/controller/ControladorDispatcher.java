@@ -137,7 +137,7 @@ public class ControladorDispatcher {
 	public String receberCadastroCarro(@ModelAttribute("cadastroCarro")Carro parametroCarro,
 			Model model) {
 		System.out.println(parametroCarro.toString());
-		System.out.println(parametroCarro.getChassi());
+		System.out.println(parametroCarro.getPlaca());
 		
 		return "CadastroCarro";
 }

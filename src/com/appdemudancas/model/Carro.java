@@ -4,7 +4,6 @@ public class Carro {
 	
 	private String placa;
 	private int anoFabricacao;
-	private String chassi;
 	private String marca;
 	private String modelo;
 	private String cor;
@@ -29,12 +28,7 @@ public class Carro {
 	public void setAnoFabricacao(int anoFabricacao) {
 		this.anoFabricacao = anoFabricacao;
 	}
-	public String getChassi() {
-		return chassi;
-	}
-	public void setChassi(String chassi) {
-		this.chassi = chassi;
-	}
+
 	public String getMarca() {
 		return marca;
 	}
