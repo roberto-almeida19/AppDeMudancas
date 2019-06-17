@@ -8,7 +8,7 @@ $(document).ready(function() {
 });
 
 function abrirModalCliente() {
-	$('.modal-title').append(' - Cliente');
+	$('.modal-title').html('Login - Cliente');
 	$('.modal-body').html(`<input type="text" id="ipt-username" name="username" autocomplete="off" placeholder="Email" class="form-control" />
 							<input type="password" id="ipt-senha" placeholder="Senha" class="form-control mt-1" autocomplete="false"/>
 							<button type="button" class="btn btn-default btn-block btn-custom mt-1" onclick="logar('cliente')">Login</button>`);
@@ -18,7 +18,7 @@ function abrirModalCliente() {
 
 function abrirModalMotorista() {
 	$('#modal-login').modal('show');
-	$('.modal-title').append(' - Motorista');
+	$('.modal-title').html('Login - Motorista');
 }
 
 

@@ -1,0 +1,7 @@
+.card-image > img{
+	padding-top:0;
+	height:50vh;
+}
+.card-content > div > p{
+	margin-left: 2vw;
+}

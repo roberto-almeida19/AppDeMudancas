@@ -38,9 +38,8 @@ public class ControladorDispatcher {
 	@RequestMapping(value= "/formularioMotorista", method=RequestMethod.GET)
 	public String carregarFormularioMotorista(Model model) {
 		
-		model.addAttribute("motorista", new Motorista());
 		
-		return "formularioMotorista";
+		return "indexMotorista";
 	}
 	
 	@RequestMapping(value= "/formularioMotorista", method=RequestMethod.POST)
