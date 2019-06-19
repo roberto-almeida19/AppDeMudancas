@@ -2,7 +2,6 @@ package com.appdemudancas.controller;
 
 import java.util.Date;
 
-import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -21,18 +20,19 @@ public class ControladorDispatcher {
 	
 	@RequestMapping(value= {"/",""}, method=RequestMethod.GET)
 	public String index(Model model) {	
-		
-				
 		return "Login";
 	}
-	
-	@RequestMapping(value= {"/login"}, method=RequestMethod.GET)
-	public String loginMotorista(Model model) {	
-		
-		model.addAttribute("motorista", new Motorista());
-				
-		return "index";
+	@ResponseBody
+	@RequestMapping(value= {"/loginMotorista"}, method=RequestMethod.GET)
+	public String loginMotorista(String login, String pass) {	
+		System.out.println(login+"  - "+pass);
+		if ("admin".equals(login) && "1234".equals(pass)) {
+			return "OK";
+		}
+		else return "NOK";
 	}
+	
+	
 	
 	//motorista
 	@RequestMapping(value= "/formularioMotorista", method=RequestMethod.GET)
@@ -91,9 +91,17 @@ public class ControladorDispatcher {
 		return "ListarMotorista";
 	}
 	
+	@RequestMapping(value= "/CadastroMotorista", method=RequestMethod.GET)
+	public String carregarCadastroMotorista() {
+		return "CadastroMotorista";
+	}
+	
+	
+	
+	
+	
 	@RequestMapping(value= "/CadastroCliente", method=RequestMethod.GET)
-	public String carregarCadastroCliente(Model model) {
-				
+	public String carregarCadastroCliente() {
 		return "CadastroCliente";
 	}
 	
